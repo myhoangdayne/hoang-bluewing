@@ -1439,27 +1439,27 @@
       ]
     },
     {
-      "id": "toan5-02",
+      "id": "geo5-62",
       "part": "toan",
       "questions": [
         {
           "n": 62,
-          "stem": "Số nghiệm nguyên của bất phương trình \\(2^{x^2-3x}<4\\) là",
+          "stem": "Cho lăng trụ tam giác đều \\(ABC.A'B'C'\\) có cạnh đáy và cạnh bên cùng bằng \\(a\\). Bán kính mặt cầu ngoại tiếp lăng trụ bằng",
           "options": [
-            "\\(4\\)",
-            "\\(3\\)",
-            "\\(5\\)",
-            "\\(2\\)"
+            "\\(\\dfrac{a\\sqrt{21}}{6}\\)",
+            "\\(\\dfrac{a\\sqrt7}{2}\\)",
+            "\\(\\dfrac{a\\sqrt3}{3}\\)",
+            "\\(\\dfrac{a\\sqrt{21}}{3}\\)"
           ],
           "answer": 0,
-          "explanation": "Bất phương trình tương đương \\(x^2-3x<2\\), tức \\(x^2-3x-2<0\\), có nghiệm \\(\\dfrac{3-\\sqrt{17}}2<x<\\dfrac{3+\\sqrt{17}}2\\), xấp xỉ \\((-0{,}56;\\,3{,}56)\\). Các số nguyên thỏa là \\(0;1;2;3\\), có 4 giá trị.",
-          "topic": "Bất phương trình mũ",
-          "skill": "Giải bất phương trình mũ rồi đếm nghiệm nguyên",
+          "explanation": "Tâm mặt cầu là trung điểm đoạn nối hai tâm đáy. Bán kính đường tròn ngoại tiếp đáy \\(r=\\dfrac{a\\sqrt3}{3}\\), nửa chiều cao \\(\\dfrac a2\\). Do đó \\(R^2=\\dfrac{a^2}{3}+\\dfrac{a^2}{4}=\\dfrac{7a^2}{12}\\), \\(R=\\dfrac{a\\sqrt{21}}{6}\\).",
+          "topic": "Mặt cầu ngoại tiếp lăng trụ",
+          "skill": "Tính bán kính mặt cầu ngoại tiếp lăng trụ đứng",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "làm tròn sai khoảng nghiệm",
-            "bỏ sót nghiệm nguyên ở hai đầu khoảng"
+            "quên chia đôi chiều cao",
+            "dùng bán kính nội tiếp thay cho ngoại tiếp"
           ]
         }
       ]
@@ -1491,51 +1491,53 @@
       ]
     },
     {
-      "id": "toan5-04",
+      "id": "geo5-64",
       "part": "toan",
       "questions": [
         {
           "n": 64,
-          "stem": "Giá trị lớn nhất của hàm số \\(y=\\dfrac{x}{x^2+1}\\) trên \\(\\mathbb R\\) bằng",
+          "stem": "Trong không gian \\(Oxyz\\), côsin của góc giữa mặt phẳng \\((P):\\ x+2y+2z-3=0\\) và mặt phẳng \\((Oxy)\\) bằng",
           "options": [
-            "\\(1\\)",
-            "\\(\\dfrac14\\)",
-            "\\(2\\)",
-            "\\(\\dfrac12\\)"
+            "\\(\\dfrac13\\)",
+            "\\(\\dfrac{\\sqrt5}{3}\\)",
+            "\\(\\dfrac29\\)",
+            "\\(\\dfrac23\\)"
           ],
           "answer": 3,
-          "explanation": "Ta có \\(y'=\\dfrac{1-x^2}{(x^2+1)^2}\\). \\(y'=0\\) khi \\(x=\\pm1\\); \\(y'\\) đổi dấu từ dương sang âm tại \\(x=1\\) nên \\(y(1)=\\dfrac12\\) là giá trị lớn nhất (và \\(y\\to0\\) khi \\(x\\to\\pm\\infty\\)).",
-          "topic": "Giá trị lớn nhất, nhỏ nhất",
-          "skill": "Tìm giá trị lớn nhất bằng đạo hàm",
-          "difficulty": 3,
-          "level": "Vận dụng",
+          "explanation": "\\(\\vec n_P=(1;2;2)\\), \\(|\\vec n_P|=3\\); \\((Oxy)\\) có pháp tuyến \\(\\vec k=(0;0;1)\\). \\(\\cos\\varphi=\\dfrac{|\\vec n_P\\cdot\\vec k|}{|\\vec n_P|\\cdot|\\vec k|}=\\dfrac23\\). Đáp số \\(\\dfrac{\\sqrt5}{3}\\) là giá trị của \\(\\sin\\varphi\\).",
+          "topic": "Góc giữa hai mặt phẳng (Oxyz)",
+          "skill": "Tính côsin góc giữa hai mặt phẳng",
+          "difficulty": 2,
+          "level": "Thông hiểu",
           "mistake_tags": [
-            "quên tính giá trị hàm tại điểm cực trị"
+            "nhầm sin với cos",
+            "quên chia cho độ dài pháp tuyến"
           ]
         }
       ]
     },
     {
-      "id": "toan5-05",
+      "id": "geo5-65",
       "part": "toan",
       "questions": [
         {
           "n": 65,
-          "stem": "Họ nguyên hàm của hàm số \\(f(x)=(2x+1)^3\\) là",
+          "stem": "Trong mặt phẳng \\(Oxy\\), hypebol \\(\\dfrac{x^2}{4}-\\dfrac{y^2}{5}=1\\) có tiêu cự bằng",
           "options": [
-            "\\(\\dfrac{(2x+1)^4}{8}+C\\)",
-            "\\(\\dfrac{(2x+1)^4}{4}+C\\)",
-            "\\(3(2x+1)^2+C\\)",
-            "\\((2x+1)^4+C\\)"
+            "\\(6\\)",
+            "\\(3\\)",
+            "\\(2\\)",
+            "\\(2\\sqrt{11}\\)"
           ],
           "answer": 0,
-          "explanation": "Đặt \\(u=2x+1\\), \\(du=2\\,dx\\) nên \\(\\displaystyle\\int(2x+1)^3dx=\\dfrac12\\int u^3du=\\dfrac{u^4}{8}+C\\). Đạo hàm của \\(\\dfrac{(2x+1)^4}{8}\\) là \\((2x+1)^3\\); nếu bỏ hệ số \\(\\tfrac12\\) từ đổi biến sẽ ra \\(\\tfrac{(2x+1)^4}{4}\\), sai.",
-          "topic": "Nguyên hàm",
-          "skill": "Tìm nguyên hàm của hàm hợp",
+          "explanation": "Với hypebol \\(c^2=a^2+b^2=4+5=9\\), nên \\(c=3\\) và tiêu cự \\(F_1F_2=2c=6\\). Phương án \\(3\\) là \\(c\\) chưa nhân đôi; với elip thì \\(c^2=a^2-b^2\\), dễ nhầm hai công thức.",
+          "topic": "Đường hypebol",
+          "skill": "Tìm tiêu cự của hypebol",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "quên nhân (\tfrac1{a}) khi đổi biến"
+            "nhầm công thức elip với hypebol",
+            "quên nhân đôi (c)"
           ]
         }
       ]
@@ -1593,27 +1595,27 @@
       ]
     },
     {
-      "id": "toan5-08",
+      "id": "geo5-68",
       "part": "toan",
       "questions": [
         {
           "n": 68,
-          "stem": "Trong không gian \\(Oxyz\\), mặt cầu tâm \\(I(1;-2;3)\\) và đi qua điểm \\(A(2;0;1)\\) có phương trình là",
+          "stem": "Cho tam giác \\(ABC\\) vuông tại \\(A\\) có \\(AB=3\\), \\(AC=4\\). Quay tam giác quanh đường thẳng \\(BC\\), ta được khối tròn xoay có thể tích bằng",
           "options": [
-            "\\((x-1)^2+(y+2)^2+(z-3)^2=3\\)",
-            "\\((x-1)^2+(y+2)^2+(z-3)^2=9\\)",
-            "\\((x+1)^2+(y-2)^2+(z+3)^2=9\\)",
-            "\\((x-2)^2+y^2+(z-1)^2=9\\)"
+            "\\(16\\pi\\)",
+            "\\(\\dfrac{48\\pi}{5}\\)",
+            "\\(12\\pi\\)",
+            "\\(\\dfrac{144\\pi}{25}\\)"
           ],
           "answer": 1,
-          "explanation": "Bán kính \\(R=IA=\\sqrt{1^2+2^2+(-2)^2}=3\\), nên \\(R^2=9\\). Phương trình mặt cầu tâm \\(I(1;-2;3)\\) là \\((x-1)^2+(y+2)^2+(z-3)^2=9\\). Phương trình có vế phải 3 là nhầm \\(R^2\\) với \\(R\\)...",
-          "topic": "Hình học Oxyz",
-          "skill": "Viết phương trình mặt cầu",
-          "difficulty": 2,
-          "level": "Thông hiểu",
+          "explanation": "\\(BC=5\\). Đường cao \\(AH=\\dfrac{AB\\cdot AC}{BC}=\\dfrac{12}{5}\\). Khối tròn xoay gồm hai hình nón chung đáy bán kính \\(AH\\), có tổng chiều cao \\(BH+HC=5\\). \\(V=\\dfrac13\\pi AH^2\\cdot BC=\\dfrac13\\pi\\cdot\\dfrac{144}{25}\\cdot5=\\dfrac{48\\pi}{5}\\).",
+          "topic": "Khối tròn xoay",
+          "skill": "Tính thể tích khối tròn xoay khi quay tam giác quanh cạnh huyền",
+          "difficulty": 4,
+          "level": "Vận dụng cao",
           "mistake_tags": [
-            "nhầm (R) với (R^2)",
-            "đổi dấu tọa độ tâm"
+            "quay quanh cạnh góc vuông thay vì cạnh huyền",
+            "quên tính đường cao (AH)"
           ]
         }
       ]
@@ -1670,53 +1672,53 @@
       ]
     },
     {
-      "id": "toan5-11",
+      "id": "geo5-71",
       "part": "toan",
       "questions": [
         {
           "n": 71,
-          "stem": "Giới hạn \\(\\displaystyle\\lim_{x\\to1}\\dfrac{x^3-1}{x^2-1}\\) bằng",
+          "stem": "Trong không gian \\(Oxyz\\), hình chiếu vuông góc của điểm \\(A(1;2;3)\\) lên mặt phẳng \\((P):\\ x+y+z-3=0\\) có tọa độ là",
           "options": [
-            "\\(1\\)",
-            "\\(3\\)",
-            "\\(0\\)",
-            "\\(\\dfrac32\\)"
+            "\\((1;1;1)\\)",
+            "\\((2;3;4)\\)",
+            "\\((0;1;3)\\)",
+            "\\((0;1;2)\\)"
           ],
           "answer": 3,
-          "explanation": "Phân tích \\(\\dfrac{x^3-1}{x^2-1}=\\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}=\\dfrac{x^2+x+1}{x+1}\\), thay \\(x=1\\) được \\(\\dfrac32\\).",
-          "topic": "Giới hạn của hàm số",
-          "skill": "Khử dạng vô định 0/0",
+          "explanation": "Đường thẳng qua \\(A\\) vuông góc \\((P)\\): \\((1+t;\\,2+t;\\,3+t)\\). Thay vào \\((P)\\): \\(1+t+2+t+3+t-3=0\\iff t=-1\\). Hình chiếu \\(H(0;1;2)\\), thỏa \\(0+1+2-3=0\\).",
+          "topic": "Phép chiếu vuông góc (Oxyz)",
+          "skill": "Tìm hình chiếu của điểm lên mặt phẳng",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "không khử dạng vô định",
-            "nhầm hằng đẳng thức (a^3-b^3)"
+            "thay sai tham số (t)",
+            "không kiểm tra điểm thuộc mặt phẳng"
           ]
         }
       ]
     },
     {
-      "id": "toan5-12",
+      "id": "geo5-72",
       "part": "toan",
       "questions": [
         {
           "n": 72,
-          "stem": "Gieo đồng thời hai con xúc xắc cân đối, đồng chất. Xác suất để tổng số chấm xuất hiện bằng \\(8\\) là",
+          "stem": "Cho tứ diện đều \\(ABCD\\) có cạnh bằng \\(a\\). Khoảng cách giữa hai đường thẳng \\(AB\\) và \\(CD\\) bằng",
           "options": [
-            "\\(\\dfrac16\\)",
-            "\\(\\dfrac19\\)",
-            "\\(\\dfrac5{36}\\)",
-            "\\(\\dfrac7{36}\\)"
+            "\\(\\dfrac{a\\sqrt3}{2}\\)",
+            "\\(\\dfrac a2\\)",
+            "\\(\\dfrac{a\\sqrt2}{2}\\)",
+            "\\(\\dfrac{a\\sqrt6}{3}\\)"
           ],
           "answer": 2,
-          "explanation": "Không gian mẫu có \\(36\\) kết quả. Các kết quả có tổng bằng 8 là \\((2;6),(3;5),(4;4),(5;3),(6;2)\\), gồm 5 kết quả. Vậy xác suất là \\(\\dfrac5{36}\\). Phương án \\(\\dfrac16\\) là xác suất tổng bằng 7.",
-          "topic": "Xác suất",
-          "skill": "Tính xác suất cổ điển",
-          "difficulty": 2,
-          "level": "Thông hiểu",
+          "explanation": "Gọi \\(M,N\\) là trung điểm \\(AB,CD\\); \\(MN\\) là đoạn vuông góc chung. \\(CM=\\dfrac{a\\sqrt3}{2}\\), \\(CN=\\dfrac a2\\) nên \\(MN=\\sqrt{CM^2-CN^2}=\\sqrt{\\dfrac{3a^2}{4}-\\dfrac{a^2}{4}}=\\dfrac{a\\sqrt2}{2}\\). Đáp số \\(\\dfrac{a\\sqrt6}{3}\\) là chiều cao của tứ diện đều.",
+          "topic": "Khoảng cách giữa hai đường thẳng chéo nhau",
+          "skill": "Tính khoảng cách giữa hai cạnh đối của tứ diện đều",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "đếm thiếu kết quả",
-            "nhầm tổng 7 và tổng 8"
+            "nhầm với chiều cao tứ diện",
+            "không chứng minh (MN) là đoạn vuông góc chung"
           ]
         }
       ]
@@ -2384,390 +2386,437 @@
     {
       "id": "khtn5-01",
       "part": "tdkh",
-      "passage": "Một sợi dây đàn hồi dài 0,60 m, hai đầu cố định. Khi tần số nguồn rung đạt giá trị nhỏ nhất 50 Hz thì trên dây xuất hiện sóng dừng ổn định với một bụng sóng. Biết các tần số tạo ra sóng dừng trên dây hai đầu cố định là f = n·v/(2L) với n = 1, 2, 3, … (n bụng sóng), L là chiều dài dây và v là tốc độ truyền sóng trên dây. Tốc độ truyền sóng trên dây tỉ lệ với căn bậc hai của lực căng dây khi khối lượng trên mỗi mét chiều dài không đổi.",
+      "passage": "Nung 50 g đá vôi (chứa 80% khối lượng là CaCO<sub>3</sub>, phần còn lại là tạp chất trơ không bị phân hủy) ở nhiệt độ cao theo phương trình CaCO<sub>3</sub> → CaO + CO<sub>2</sub>. Cho khối lượng mol: CaCO<sub>3</sub> = 100 g/mol, CaO = 56 g/mol, CO<sub>2</sub> = 44 g/mol.",
       "questions": [
         {
-          "stem": "Tốc độ truyền sóng trên dây là:",
+          "n": 103,
+          "stem": "Nếu phản ứng xảy ra hoàn toàn thì khối lượng CaO thu được là:",
           "options": [
-            "30 m/s",
-            "120 m/s",
-            "50 m/s",
-            "60 m/s"
-          ],
-          "answer": 3,
-          "explanation": "Với n = 1: f₁ = v/(2L) nên v = 2Lf₁ = 2 · 0,60 · 50 = 60 m/s. Phương án 30 m/s là chia thay vì nhân với 2L; 120 m/s là nhân thêm một lần với 2.",
-          "topic": "Vật lí: sóng dừng",
-          "skill": "Tính tốc độ truyền sóng",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "quên hệ số 2 trong công thức",
-            "nhầm bước sóng với chiều dài dây"
-          ],
-          "n": 103
-        },
-        {
-          "stem": "Để trên dây có 4 bụng sóng thì tần số nguồn phải bằng:",
-          "options": [
-            "100 Hz",
-            "200 Hz",
-            "150 Hz",
-            "125 Hz"
+            "28,0 g",
+            "22,4 g",
+            "17,9 g",
+            "40,0 g"
           ],
           "answer": 1,
-          "explanation": "Tần số của sóng dừng có n bụng là f = n · f₁ = n · 50 Hz. Với n = 4 thì f = 200 Hz.",
-          "topic": "Vật lí: sóng dừng",
-          "skill": "Tìm tần số ứng với số bụng",
+          "explanation": "Khối lượng CaCO<sub>3</sub> là 50 × 0,80 = 40 g, tức 0,40 mol. Theo phương trình, số mol CaO bằng số mol CaCO<sub>3</sub> nên khối lượng CaO là 0,40 × 56 = 22,4 g. Giá trị 28,0 g là khi coi cả 50 g đều là CaCO<sub>3</sub>; 17,9 g là khi nhân thêm 80% một lần nữa; 40,0 g là khối lượng CaCO<sub>3</sub>.",
+          "topic": "Hóa học: hiệu suất phản ứng",
+          "skill": "Tính khối lượng sản phẩm theo lí thuyết",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "nhầm số bụng với số nút",
-            "cộng thay vì nhân"
-          ],
-          "n": 104
+            "quên trừ tạp chất",
+            "nhầm khối lượng chất phản ứng với khối lượng sản phẩm"
+          ]
         },
         {
-          "stem": "Giữ nguyên chiều dài dây và loại dây, tăng lực căng dây lên 4 lần. Tần số nhỏ nhất tạo sóng dừng khi đó bằng:",
+          "n": 104,
+          "stem": "Nếu hiệu suất phân hủy CaCO<sub>3</sub> là 90% thì khối lượng chất rắn còn lại sau khi nung (gồm CaO, CaCO<sub>3</sub> dư và tạp chất) là:",
           "options": [
-            "200 Hz",
-            "25 Hz",
-            "50 Hz",
-            "100 Hz"
+            "34,16 g",
+            "20,16 g",
+            "27,60 g",
+            "15,84 g"
           ],
-          "answer": 3,
-          "explanation": "Tốc độ v tỉ lệ với √(lực căng) nên khi lực căng tăng 4 lần thì v tăng 2 lần (120 m/s). Tần số nhỏ nhất f₁ = v/(2L) cũng tăng 2 lần, bằng 100 Hz. Phương án 200 Hz là coi v tỉ lệ thuận với lực căng.",
-          "topic": "Vật lí: sóng dừng",
-          "skill": "Suy ra ảnh hưởng của lực căng",
+          "answer": 0,
+          "explanation": "Số mol CaCO<sub>3</sub> bị phân hủy là 0,40 × 0,90 = 0,36 mol, tạo ra 0,36 mol CO<sub>2</sub> bay đi, khối lượng CO<sub>2</sub> là 0,36 × 44 = 15,84 g. Theo bảo toàn khối lượng, chất rắn còn lại là 50 − 15,84 = 34,16 g. Giá trị 20,16 g chỉ là khối lượng CaO; 27,60 g là khi coi phản ứng hoàn toàn (50 − 22,4); 15,84 g là khối lượng khí CO<sub>2</sub> thoát ra.",
+          "topic": "Hóa học: hiệu suất phản ứng",
+          "skill": "Tính khối lượng chất rắn còn lại khi hiệu suất nhỏ hơn 100%",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "nhầm tỉ lệ căn bậc hai với tỉ lệ thuận"
-          ],
-          "n": 105
+            "chỉ tính khối lượng một chất trong chất rắn",
+            "quên áp dụng bảo toàn khối lượng"
+          ]
         }
       ]
     },
     {
       "id": "khtn5-02",
       "part": "tdkh",
-      "passage": "Tổng hợp amoniac theo phản ứng thuận nghịch: N₂(k) + 3H₂(k) ⇌ 2NH₃(k), ΔH = −92 kJ. Bảng dưới đây (số liệu gần đúng) cho biết phần trăm thể tích NH₃ trong hỗn hợp ở trạng thái cân bằng với tỉ lệ ban đầu N₂ : H₂ = 1 : 3.<table class=\"bank-table\"><thead><tr><th>Nhiệt độ</th><th>Áp suất 200 atm</th><th>Áp suất 300 atm</th></tr></thead><tbody><tr><td>400 °C</td><td>38%</td><td>48%</td></tr><tr><td>500 °C</td><td>18%</td><td>26%</td></tr></tbody></table>",
       "questions": [
         {
-          "stem": "Ở cùng áp suất, tăng nhiệt độ từ 400 °C lên 500 °C làm phần trăm NH₃ giảm. Giải thích nào đúng?",
+          "n": 105,
+          "stem": "Trộn 100 mL dung dịch Na<sub>2</sub>SO<sub>4</sub> 0,10 M với 100 mL dung dịch BaCl<sub>2</sub> 0,15 M, thu được kết tủa BaSO<sub>4</sub> (khối lượng mol 233 g/mol). Khối lượng kết tủa là:",
           "options": [
-            "Phản ứng thuận tỏa nhiệt nên khi tăng nhiệt độ cân bằng chuyển dịch theo chiều nghịch (thu nhiệt)",
-            "Phản ứng thuận thu nhiệt nên cân bằng chuyển dịch theo chiều thuận",
-            "Tăng nhiệt độ làm số mol khí trước và sau phản ứng bằng nhau",
-            "Tăng nhiệt độ làm mất hết chất xúc tác"
+            "3,50 g",
+            "5,83 g",
+            "2,33 g",
+            "1,17 g"
           ],
-          "answer": 0,
-          "explanation": "ΔH < 0 nên chiều thuận tỏa nhiệt. Theo nguyên lí Le Chatelier, khi tăng nhiệt độ, cân bằng chuyển dịch theo chiều thu nhiệt, tức chiều nghịch, làm giảm lượng NH₃. Nhiệt độ không làm thay đổi số mol khí của phương trình.",
-          "topic": "Hóa học: cân bằng hóa học",
-          "skill": "Giải thích ảnh hưởng của nhiệt độ",
-          "difficulty": 2,
-          "level": "Thông hiểu",
+          "answer": 2,
+          "explanation": "Số mol SO<sub>4</sub><sup>2−</sup> là 0,010 mol và số mol Ba<sup>2+</sup> là 0,015 mol; phản ứng theo tỉ lệ 1 : 1 nên SO<sub>4</sub><sup>2−</sup> hết, Ba<sup>2+</sup> dư. Số mol kết tủa là 0,010 mol, khối lượng là 0,010 × 233 = 2,33 g. Giá trị 3,50 g là khi tính theo chất dư (0,015 mol); 5,83 g là khi cộng số mol hai chất; 1,17 g là một nửa kết quả đúng.",
+          "topic": "Hóa học: phản ứng tạo kết tủa",
+          "skill": "Xác định chất hết, chất dư để tính khối lượng kết tủa",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "nhầm phản ứng tỏa nhiệt với thu nhiệt"
-          ],
-          "n": 106
-        },
-        {
-          "stem": "Ở cùng nhiệt độ, tăng áp suất từ 200 atm lên 300 atm làm phần trăm NH₃ tăng vì:",
-          "options": [
-            "Chiều thuận làm tăng tổng số mol khí nên cân bằng chuyển dịch theo chiều thuận",
-            "Áp suất làm phản ứng trở thành tỏa nhiệt mạnh hơn",
-            "Áp suất làm tăng nồng độ chất xúc tác",
-            "Chiều thuận làm giảm tổng số mol khí (4 mol → 2 mol) nên cân bằng chuyển dịch theo chiều thuận"
-          ],
-          "answer": 3,
-          "explanation": "Vế trái có 1 + 3 = 4 mol khí, vế phải có 2 mol khí. Khi tăng áp suất, cân bằng chuyển dịch theo chiều giảm số mol khí, tức chiều thuận, nên NH₃ tăng.",
-          "topic": "Hóa học: cân bằng hóa học",
-          "skill": "Giải thích ảnh hưởng của áp suất",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "nhầm chiều giảm số mol khí"
-          ],
-          "n": 107
-        },
-        {
-          "stem": "Trong công nghiệp, phản ứng thường tiến hành ở khoảng 450 – 500 °C với chất xúc tác sắt dù hiệu suất lí thuyết thấp hơn ở 400 °C. Lí do hợp lí nhất là:",
-          "options": [
-            "Ở nhiệt độ thấp tốc độ phản ứng quá chậm; xúc tác chỉ giúp mau đạt cân bằng chứ không làm chuyển dịch cân bằng",
-            "Chất xúc tác làm tăng hiệu suất cân bằng lên gần 100%",
-            "Ở 500 °C phản ứng trở thành thu nhiệt nên có lợi hơn",
-            "Nhiệt độ càng cao thì phần trăm NH₃ ở cân bằng càng lớn"
-          ],
-          "answer": 0,
-          "explanation": "Cần cân nhắc giữa hiệu suất (cân bằng) và tốc độ phản ứng. Ở nhiệt độ thấp, hiệu suất lí thuyết cao hơn nhưng tốc độ quá chậm; chọn khoảng 450 – 500 °C cùng xúc tác Fe để đạt cân bằng nhanh hơn, và dùng áp suất cao để bù lại hiệu suất. Xúc tác không làm đổi trạng thái cân bằng.",
-          "topic": "Hóa học: cân bằng hóa học",
-          "skill": "Giải thích điều kiện sản xuất thực tế",
-          "difficulty": 4,
-          "level": "Vận dụng cao",
-          "mistake_tags": [
-            "cho rằng xúc tác làm tăng hiệu suất cân bằng",
-            "nhầm tốc độ với hiệu suất"
-          ],
-          "n": 108
+            "tính theo chất dư thay vì chất hết",
+            "cộng số mol của hai chất"
+          ]
         }
       ]
     },
     {
       "id": "khtn5-03",
       "part": "tdkh",
-      "passage": "Một quần thể vi khuẩn được nuôi trong bình có nguồn thức ăn giới hạn. Số lượng cá thể (đơn vị: nghìn) được đếm theo thời gian như sau.<table class=\"bank-table\"><thead><tr><th>Thời điểm (giờ)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead><tbody><tr><td>Số cá thể</td><td>50</td><td>90</td><td>150</td><td>235</td><td>315</td><td>365</td><td>388</td><td>397</td><td>399</td></tr></tbody></table>",
+      "passage": "Một con lắc đơn có chiều dài \\(\\ell = 1{,}0\\) m dao động nhỏ tại nơi có gia tốc trọng trường \\(g = \\pi^2\\) m/s² (xấp xỉ 9,87 m/s²). Chu kì dao động nhỏ của con lắc đơn là \\(T = 2\\pi\\sqrt{\\dfrac{\\ell}{g}}\\).",
       "questions": [
         {
-          "stem": "Số lượng cá thể tăng thêm nhiều nhất trong khoảng thời gian nào?",
+          "n": 106,
+          "stem": "Chu kì dao động của con lắc này là:",
           "options": [
-            "Từ giờ thứ 0 đến giờ thứ 1",
-            "Từ giờ thứ 2 đến giờ thứ 3",
-            "Từ giờ thứ 4 đến giờ thứ 5",
-            "Từ giờ thứ 7 đến giờ thứ 8"
+            "1 s",
+            "2 s",
+            "6,28 s",
+            "0,32 s"
           ],
           "answer": 1,
-          "explanation": "Số cá thể tăng thêm qua từng giờ: 40, 60, 85, 80, 50, 23, 9, 2. Mức tăng lớn nhất là 85 nghìn, trong khoảng từ giờ thứ 2 đến giờ thứ 3.",
-          "topic": "Sinh học: tăng trưởng quần thể",
-          "skill": "Xác định giai đoạn tăng nhanh nhất",
+          "explanation": "Thay số: \\(T = 2\\pi\\sqrt{\\dfrac{1{,}0}{\\pi^2}} = 2\\pi \\times \\dfrac{1}{\\pi} = 2\\) s. Giá trị 1 s là thời gian đi nửa chu kì; 6,28 s là khi chỉ lấy \\(2\\pi\\) mà bỏ qua căn thức; 0,32 s là khi quên hệ số \\(2\\pi\\).",
+          "topic": "Vật lí: con lắc đơn",
+          "skill": "Tính chu kì dao động",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "nhìn vào số lượng lớn nhất thay vì mức tăng"
-          ],
-          "n": 109
+            "nhầm chu kì với nửa chu kì",
+            "quên một thừa số trong công thức"
+          ]
         },
         {
-          "stem": "Dựa vào số liệu, sức chứa của môi trường (kích thước tối đa) xấp xỉ bao nhiêu?",
+          "n": 107,
+          "stem": "Để chu kì dao động nhỏ giảm xuống còn 1 s (tại cùng nơi đó) thì chiều dài con lắc phải là:",
           "options": [
-            "Khoảng 50 nghìn cá thể",
-            "Khoảng 235 nghìn cá thể",
-            "Không giới hạn",
-            "Khoảng 400 nghìn cá thể"
+            "0,50 m",
+            "0,125 m",
+            "4,0 m",
+            "0,25 m"
           ],
           "answer": 3,
-          "explanation": "Số lượng cá thể tăng chậm dần và tiệm cận khoảng 400 nghìn (397, 399 ở các giờ cuối). Đây là sức chứa của môi trường. Quần thể không thể tăng vô hạn khi nguồn sống có hạn.",
-          "topic": "Sinh học: tăng trưởng quần thể",
-          "skill": "Ước lượng sức chứa của môi trường",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "nhầm giá trị ban đầu với giá trị tối đa"
-          ],
-          "n": 110
-        },
-        {
-          "stem": "Nguyên nhân chủ yếu khiến tốc độ tăng trưởng giảm dần sau giờ thứ 3 là:",
-          "options": [
-            "Vi khuẩn mất khả năng sinh sản ngay từ giờ thứ 4",
-            "Nhiệt độ môi trường giảm đột ngột đều đặn",
-            "Mật độ cá thể tăng làm cạnh tranh thức ăn và nơi ở gay gắt, chất thải tích lũy nhiều",
-            "Số cá thể ban đầu quá nhỏ"
-          ],
-          "answer": 2,
-          "explanation": "Khi mật độ tăng, nguồn thức ăn giảm, chất độc tích tụ và cạnh tranh tăng, nên tỉ lệ sinh giảm hoặc tử vong tăng; đó là các nhân tố phụ thuộc mật độ. Bảng số liệu không cho thấy nhiệt độ đổi, và vi khuẩn vẫn tăng số lượng sau giờ thứ 4.",
-          "topic": "Sinh học: tăng trưởng quần thể",
-          "skill": "Giải thích nguyên nhân tăng chậm",
+          "explanation": "Chu kì tỉ lệ với căn bậc hai của chiều dài: muốn chu kì giảm 2 lần thì chiều dài phải giảm 4 lần, tức \\(\\ell = 1{,}0/4 = 0{,}25\\) m (hoặc \\(\\ell = \\dfrac{gT^2}{4\\pi^2} = 0{,}25\\) m). Giá trị 0,50 m là khi coi chu kì tỉ lệ thuận với chiều dài; 0,125 m là khi giảm chiều dài 8 lần; 4,0 m là khi tăng chiều dài thay vì giảm.",
+          "topic": "Vật lí: con lắc đơn",
+          "skill": "Suy ra chiều dài từ chu kì mong muốn",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "gán nguyên nhân không có trong dữ kiện"
-          ],
-          "n": 111
+            "coi chu kì tỉ lệ thuận với chiều dài",
+            "nhầm chiều thay đổi của chiều dài"
+          ]
         }
       ]
     },
     {
       "id": "khtn5-04",
       "part": "tdkh",
-      "passage": "Ở đồng bằng sông Cửu Long, mùa khô lượng nước sông Mê Công về thấp và thủy triều đưa nước mặn lấn sâu vào các cửa sông. Bảng dưới đây (số liệu minh họa) cho biết độ mặn trung bình tháng đo tại một trạm cách cửa sông 40 km (đơn vị: ‰). Theo quy ước của bài, độ mặn từ 4‰ trở lên gây hại nghiêm trọng cho lúa.<table class=\"bank-table\"><thead><tr><th>Tháng</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><td>Độ mặn (‰)</td><td>1,8</td><td>3,2</td><td>5,5</td><td>7,9</td><td>4,1</td><td>0,8</td></tr></tbody></table><table class=\"bank-table\"><thead><tr><th>Tháng</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr></thead><tbody><tr><td>Độ mặn (‰)</td><td>0,3</td><td>0,2</td><td>0,2</td><td>0,3</td><td>0,6</td><td>1,1</td></tr></tbody></table>",
       "questions": [
         {
-          "stem": "Tháng nào trạm đo có độ mặn cao nhất?",
+          "n": 108,
+          "stem": "Một đoạn dây dẫn thẳng dài 0,50 m có dòng điện 4,0 A chạy qua, đặt trong từ trường đều có cảm ứng từ 0,20 T sao cho dây hợp với đường sức từ một góc 30°. Độ lớn lực từ tác dụng lên đoạn dây là:",
           "options": [
-            "Tháng 3",
-            "Tháng 4",
-            "Tháng 5",
-            "Tháng 2"
+            "0,20 N",
+            "0,40 N",
+            "0,35 N",
+            "0,10 N"
           ],
-          "answer": 1,
-          "explanation": "Độ mặn tháng 4 là 7,9‰, cao nhất trong cả năm (tháng 3 là 5,5‰; tháng 5 là 4,1‰).",
-          "topic": "Địa lí: xâm nhập mặn ở đồng bằng sông Cửu Long",
-          "skill": "Đọc giá trị cực đại trong bảng",
-          "difficulty": 1,
-          "level": "Nhận biết",
-          "mistake_tags": [
-            "đọc nhầm hàng của bảng"
-          ],
-          "n": 112
-        },
-        {
-          "stem": "Có bao nhiêu tháng trong năm độ mặn đạt mức gây hại nghiêm trọng cho lúa theo quy ước (từ 4‰ trở lên)?",
-          "options": [
-            "2 tháng",
-            "3 tháng",
-            "4 tháng",
-            "5 tháng"
-          ],
-          "answer": 1,
-          "explanation": "Các tháng có độ mặn từ 4‰ trở lên gồm tháng 3 (5,5‰), tháng 4 (7,9‰) và tháng 5 (4,1‰). Tháng 2 chỉ đạt 3,2‰ nên chưa vượt ngưỡng.",
-          "topic": "Địa lí: xâm nhập mặn ở đồng bằng sông Cửu Long",
-          "skill": "Đếm số tháng vượt ngưỡng",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "bỏ sót tháng sát ngưỡng"
-          ],
-          "n": 113
-        },
-        {
-          "stem": "Giải pháp nào sau đây thích ứng hợp lí nhất với tình trạng xâm nhập mặn theo mùa ở khu vực này?",
-          "options": [
-            "Phá rừng ngập mặn ven biển để lấy đất làm nhà",
-            "Tăng khai thác nước ngầm để tưới tiêu quanh năm",
-            "Xây dựng cống ngăn mặn, trữ nước ngọt và điều chỉnh mùa vụ, cơ cấu cây trồng cho phù hợp",
-            "Mở rộng diện tích lúa ba vụ trong mùa khô"
-          ],
-          "answer": 2,
-          "explanation": "Mặn xâm nhập mạnh từ tháng 3 đến tháng 5 (mùa khô), nên cần trữ nước ngọt, ngăn mặn và chuyển đổi mùa vụ/ cây trồng. Phá rừng ngập mặn làm mất lớp chắn tự nhiên; khai thác nước ngầm quá mức gây sụt lún đất; mở rộng lúa vụ khô càng cần nhiều nước ngọt trong thời điểm khan hiếm.",
-          "topic": "Địa lí: xâm nhập mặn ở đồng bằng sông Cửu Long",
-          "skill": "Đề xuất giải pháp phù hợp",
+          "answer": 0,
+          "explanation": "Lực từ có độ lớn \\(F = BI\\ell\\sin\\alpha = 0{,}20 \\times 4{,}0 \\times 0{,}50 \\times \\sin 30^\\circ = 0{,}20\\) N. Giá trị 0,40 N là khi quên nhân với \\(\\sin\\alpha\\); 0,35 N là khi dùng \\(\\cos 30^\\circ\\) thay cho \\(\\sin 30^\\circ\\); 0,10 N là khi áp dụng \\(\\sin 30^\\circ\\) hai lần.",
+          "topic": "Vật lí: lực từ",
+          "skill": "Tính lực từ khi dây dẫn nghiêng so với từ trường",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "chọn giải pháp làm nặng thêm vấn đề"
-          ],
-          "n": 114
+            "quên thừa số sin của góc",
+            "dùng sai hàm lượng giác"
+          ]
         }
       ]
     },
     {
       "id": "khtn5-05",
       "part": "tdkh",
-      "passage": "Sau hơn một nghìn năm Bắc thuộc (từ năm 179 TCN đến năm 938), năm 938 quân Nam Hán kéo vào xâm lược nước ta. Ngô Quyền, người đã giết kẻ phản bội Kiều Công Tiễn, cho quân cắm một bãi cọc nhọn bịt sắt ngầm dưới lòng sông Bạch Đằng, lợi dụng lúc thủy triều lên nhử thuyền giặc vào rồi đánh mạnh khi nước triều rút xuống, thuyền giặc mắc cọc và bị đánh tan. Năm 939, Ngô Quyền xưng vương, đóng đô ở Cổ Loa.",
+      "passage": "Bệnh X ở người do một gen lặn nằm trên nhiễm sắc thể thường quy định (alen A bình thường trội hoàn toàn so với alen a gây bệnh). Một cặp vợ chồng đều có kiểu hình bình thường nhưng cả hai đều mang kiểu gen dị hợp Aa. Mỗi lần sinh con là một sự kiện độc lập; xác suất sinh con trai và con gái đều bằng 1/2.",
       "questions": [
         {
-          "stem": "Chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo là chiến thắng trước quân xâm lược nào?",
+          "n": 109,
+          "stem": "Xác suất để cặp vợ chồng này sinh một người con trai bị bệnh X là:",
           "options": [
-            "Quân Nam Hán",
-            "Quân Tống",
-            "Quân Mông – Nguyên",
-            "Quân Minh"
+            "1/4",
+            "1/8",
+            "1/2",
+            "3/8"
           ],
-          "answer": 0,
-          "explanation": "Theo đoạn tư liệu, năm 938 quân Nam Hán kéo vào xâm lược và bị Ngô Quyền đánh tan trên sông Bạch Đằng. Quân Tống, Mông – Nguyên, Minh xâm lược ở các thế kỉ sau.",
-          "topic": "Lịch sử: chiến thắng Bạch Đằng năm 938",
-          "skill": "Xác định đối tượng và thời điểm",
-          "difficulty": 1,
-          "level": "Nhận biết",
-          "mistake_tags": [
-            "nhầm các cuộc kháng chiến trên sông Bạch Đằng"
-          ],
-          "n": 115
-        },
-        {
-          "stem": "Nghệ thuật quân sự độc đáo của Ngô Quyền trong trận Bạch Đằng năm 938 là gì?",
-          "options": [
-            "Đánh du kích ở rừng núi để bao vây quân giặc",
-            "Dùng hỏa công đốt trụi lương thực của giặc",
-            "Xây thành lũy kiên cố để cố thủ lâu dài",
-            "Lợi dụng thủy triều và dùng bãi cọc ngầm để tiêu diệt thuyền chiến của giặc"
-          ],
-          "answer": 3,
-          "explanation": "Ngô Quyền tận dụng địa hình sông Bạch Đằng và quy luật thủy triều: cho cắm cọc ngầm, nhử thuyền giặc vào khi nước lên, tấn công khi nước rút để thuyền mắc cọc. Đây là cách đánh kết hợp địa hình, thời tiết và sức người.",
-          "topic": "Lịch sử: chiến thắng Bạch Đằng năm 938",
-          "skill": "Hiểu nghệ thuật quân sự",
+          "answer": 1,
+          "explanation": "Từ phép lai Aa × Aa, xác suất con có kiểu gen aa (bị bệnh) là 1/4. Biến cố \"con bị bệnh\" và \"con trai\" độc lập nên xác suất sinh con trai bị bệnh là 1/4 × 1/2 = 1/8. Giá trị 1/4 là xác suất sinh con bị bệnh (chưa xét giới tính); 1/2 là xác suất sinh con trai; 3/8 là khi cộng thay vì nhân.",
+          "topic": "Sinh học: xác suất di truyền",
+          "skill": "Tính xác suất kết hợp nhiều biến cố độc lập",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "nhầm cách đánh giữa các chiến thắng khác nhau"
-          ],
-          "n": 116
+            "quên xét giới tính",
+            "cộng thay vì nhân xác suất"
+          ]
         },
         {
-          "stem": "Ý nghĩa quan trọng nhất của chiến thắng Bạch Đằng năm 938 và việc Ngô Quyền xưng vương năm 939 là gì?",
+          "n": 110,
+          "stem": "Xác suất để cặp vợ chồng này sinh hai người con mà có đúng một người bị bệnh X là:",
           "options": [
-            "Thống nhất đất nước từ Bắc vào Nam",
-            "Chấm dứt hơn một nghìn năm Bắc thuộc, mở ra thời kì độc lập, tự chủ lâu dài của dân tộc",
-            "Đánh dấu việc nước ta trở thành nước phụ thuộc vào nhà Hán",
-            "Chấm dứt hoàn toàn nguy cơ xâm lược từ phương Bắc"
+            "3/16",
+            "9/16",
+            "1/2",
+            "3/8"
           ],
-          "answer": 1,
-          "explanation": "Chiến thắng năm 938 kết thúc thời kì Bắc thuộc kéo dài hơn một nghìn năm, mở đầu thời kì độc lập, tự chủ. Tuy vậy nước ta vẫn phải nhiều lần kháng chiến chống ngoại xâm sau đó nên không thể nói “chấm dứt hoàn toàn nguy cơ”.",
-          "topic": "Lịch sử: chiến thắng Bạch Đằng năm 938",
-          "skill": "Đánh giá ý nghĩa lịch sử",
+          "answer": 3,
+          "explanation": "Với mỗi lần sinh, xác suất bị bệnh là 1/4 và không bị bệnh là 3/4. Có hai khả năng sắp xếp (người con đầu bị bệnh hoặc người con sau bị bệnh) nên xác suất là 2 × (1/4) × (3/4) = 3/8. Giá trị 3/16 là khi quên nhân với 2; 9/16 là xác suất cả hai con đều bình thường; 1/2 là kết quả sai.",
+          "topic": "Sinh học: xác suất di truyền",
+          "skill": "Tính xác suất trong nhiều lần sinh con",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "khái quát tuyệt đối",
-            "nhầm mốc thống nhất đất nước"
-          ],
-          "n": 117
+            "quên số cách sắp xếp",
+            "nhầm với xác suất cả hai con bình thường"
+          ]
         }
       ]
     },
     {
       "id": "khtn5-06",
       "part": "tdkh",
-      "passage": "Chỉ số giá tiêu dùng (CPI) phản ánh mức giá chung của hàng hóa và dịch vụ tiêu dùng. Tỉ lệ lạm phát của một năm được tính bằng phần trăm thay đổi của CPI so với năm liền trước. Bảng dưới đây cho biết CPI qua các năm (năm 2020 = 100).<table class=\"bank-table\"><thead><tr><th>Năm</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th></tr></thead><tbody><tr><td>CPI</td><td>100</td><td>103</td><td>108,2</td><td>111,4</td></tr></tbody></table>",
       "questions": [
         {
-          "stem": "Năm nào có tỉ lệ lạm phát cao nhất trong ba năm 2021, 2022 và 2023?",
+          "n": 111,
+          "stem": "Phương trình tổng quát của quang hợp: 6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>. Nếu cây đã hấp thụ 44,8 L khí CO<sub>2</sub> (ở điều kiện tiêu chuẩn) thì khối lượng glucozơ (khối lượng mol 180 g/mol) tạo ra tối đa là:",
           "options": [
-            "Năm 2021",
-            "Năm 2023",
-            "Năm 2022",
-            "Ba năm bằng nhau"
+            "360 g",
+            "60 g",
+            "120 g",
+            "30 g"
+          ],
+          "answer": 1,
+          "explanation": "Số mol CO<sub>2</sub> là 44,8/22,4 = 2,0 mol. Cứ 6 mol CO<sub>2</sub> tạo 1 mol glucozơ nên số mol glucozơ là 2,0/6 = 1/3 mol, khối lượng là (1/3) × 180 = 60 g. Giá trị 360 g là khi coi 1 mol CO<sub>2</sub> tạo 1 mol glucozơ; 120 g là khi chia cho 3 thay vì 6; 30 g là khi chia cho 12.",
+          "topic": "Sinh học: quang hợp",
+          "skill": "Tính khối lượng sản phẩm từ phương trình tổng quát",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "bỏ qua hệ số trong phương trình",
+            "chia sai cho hệ số"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-07",
+      "part": "tdkh",
+      "passage": "Bảng sau cho biết sản lượng thép của quốc gia K (số liệu giả định): <table class=\"bank-table\"><thead><tr><th>Năm</th><th>2016</th><th>2018</th><th>2020</th></tr></thead><tbody><tr><td>Sản lượng thép (triệu tấn)</td><td>20</td><td>24</td><td>30</td></tr></tbody></table>",
+      "questions": [
+        {
+          "n": 112,
+          "stem": "Nếu lấy năm 2016 làm gốc (100%) thì chỉ số sản lượng thép năm 2020 là:",
+          "options": [
+            "50%",
+            "125%",
+            "150%",
+            "120%"
           ],
           "answer": 2,
-          "explanation": "Lạm phát 2021 = 3,0%; 2022 = (108,2 − 103)/103 ≈ 5,05%; 2023 = (111,4 − 108,2)/108,2 ≈ 2,96%. Năm 2022 cao nhất. Lưu ý không so với năm gốc 2020 vì lạm phát luôn so với năm liền trước.",
-          "topic": "Kinh tế: CPI và lạm phát",
-          "skill": "So sánh mức lạm phát giữa các năm",
+          "explanation": "Chỉ số năm 2020 là 30/20 × 100% = 150%. Giá trị 50% là mức tăng so với năm gốc chứ không phải chỉ số; 125% là chỉ số năm 2020 so với năm 2018 (30/24); 120% là chỉ số năm 2018 so với năm 2016 (24/20).",
+          "topic": "Địa lí: công nghiệp",
+          "skill": "Tính chỉ số phát triển so với năm gốc",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "so với năm gốc thay vì năm liền trước"
-          ],
-          "n": 118
+            "nhầm mức tăng với chỉ số",
+            "dùng nhầm năm gốc"
+          ]
         },
         {
-          "stem": "Tỉ lệ lạm phát của năm 2023 là khoảng:",
+          "n": 113,
+          "stem": "Sản lượng thép năm 2020 tăng bao nhiêu phần trăm so với năm 2018?",
           "options": [
-            "2,96%",
-            "11,4%",
-            "3,2%",
-            "8,2%"
+            "25%",
+            "20%",
+            "50%",
+            "125%"
           ],
           "answer": 0,
-          "explanation": "Lạm phát 2023 = (111,4 − 108,2)/108,2 ≈ 0,0296 = 2,96%. Phương án 11,4% là so với năm gốc 2020; 3,2% là hiệu số CPI chưa chia cho CPI năm trước.",
-          "topic": "Kinh tế: CPI và lạm phát",
-          "skill": "Tính tỉ lệ lạm phát",
+          "explanation": "Mức tăng là \\(\\dfrac{30 - 24}{24} \\times 100\\% = 25\\%\\). Giá trị 20% là khi lấy mức tăng chia cho giá trị năm 2020 (6/30); 50% là mức tăng so với năm 2016; 125% là chỉ số năm 2020 so với 2018 chứ không phải mức tăng.",
+          "topic": "Địa lí: công nghiệp",
+          "skill": "Tính tốc độ tăng giữa hai năm bất kì",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "chia cho giá trị năm sau",
+            "nhầm chỉ số với mức tăng"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-08",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 114,
+          "stem": "Ở vùng núi, nhiệt độ không khí giảm trung bình 0,6 °C cho mỗi 100 m lên cao. Nếu nhiệt độ ở chân núi là 26 °C thì nhiệt độ ở đỉnh núi cao 2 000 m so với chân núi xấp xỉ là:",
+          "options": [
+            "12 °C",
+            "38 °C",
+            "14 °C",
+            "24,8 °C"
+          ],
+          "answer": 2,
+          "explanation": "Độ cao 2 000 m ứng với 20 lần 100 m nên nhiệt độ giảm 0,6 × 20 = 12 °C, do đó nhiệt độ ở đỉnh núi là 26 − 12 = 14 °C. Giá trị 12 °C là mức giảm nhiệt độ, không phải nhiệt độ ở đỉnh; 38 °C là khi cộng thay vì trừ; 24,8 °C là khi coi nhiệt độ giảm 0,6 °C cho mỗi 1 000 m.",
+          "topic": "Địa lí: khí hậu",
+          "skill": "Tính nhiệt độ theo độ cao",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "nhầm mức giảm với nhiệt độ",
+            "nhầm đơn vị độ cao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-09",
+      "part": "tdkh",
+      "passage": "Chiến dịch Hồ Chí Minh mở màn ngày 26-4-1975. Đến 11 giờ 30 phút ngày 30-4-1975, lá cờ cách mạng được cắm trên nóc Dinh Độc Lập, Tổng thống Dương Văn Minh tuyên bố đầu hàng vô điều kiện. Chiến dịch toàn thắng, miền Nam được hoàn toàn giải phóng.",
+      "questions": [
+        {
+          "n": 115,
+          "stem": "Theo đoạn dẫn, chiến dịch toàn thắng vào ngày nào?",
+          "options": [
+            "26-4-1975",
+            "1-5-1975",
+            "29-4-1975",
+            "30-4-1975"
+          ],
+          "answer": 3,
+          "explanation": "Đoạn dẫn nêu rõ đến ngày 30-4-1975, lá cờ cách mạng được cắm trên nóc Dinh Độc Lập và chính quyền Sài Gòn đầu hàng, chiến dịch toàn thắng. Ngày 26-4-1975 là ngày mở màn; các ngày 29-4 và 1-5 không phải ngày kết thúc chiến dịch theo đoạn dẫn.",
+          "topic": "Lịch sử: Chiến dịch Hồ Chí Minh",
+          "skill": "Xác định mốc thời gian từ đoạn dẫn",
+          "difficulty": 1,
+          "level": "Nhận biết",
+          "mistake_tags": [
+            "nhầm ngày mở màn với ngày kết thúc"
+          ]
+        },
+        {
+          "n": 116,
+          "stem": "Nếu tính cả ngày mở màn và ngày kết thúc thì chiến dịch diễn ra trong bao nhiêu ngày?",
+          "options": [
+            "5 ngày",
+            "4 ngày",
+            "6 ngày",
+            "30 ngày"
+          ],
+          "answer": 0,
+          "explanation": "Chiến dịch diễn ra từ ngày 26 đến ngày 30 tháng 4 năm 1975; tính cả hai ngày đầu và cuối là 30 − 26 + 1 = 5 ngày. Giá trị 4 ngày là khi không tính ngày đầu; 6 ngày là khi cộng thừa một ngày; 30 ngày là khi lấy nhầm ngày kết thúc.",
+          "topic": "Lịch sử: Chiến dịch Hồ Chí Minh",
+          "skill": "Tính số ngày giữa hai mốc (tính cả ngày đầu và cuối)",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "không tính cả ngày đầu và ngày cuối",
+            "lấy nhầm ngày làm số ngày"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-10",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 117,
+          "stem": "Khởi nghĩa Lam Sơn bùng nổ năm 1418 và kết thúc thắng lợi năm 1427. Nếu lấy năm kết thúc trừ đi năm bùng nổ thì cuộc khởi nghĩa kéo dài bao nhiêu năm?",
+          "options": [
+            "10 năm",
+            "8 năm",
+            "11 năm",
+            "9 năm"
+          ],
+          "answer": 3,
+          "explanation": "Lấy năm kết thúc trừ năm bắt đầu: 1427 − 1418 = 9 năm. Giá trị 10 năm là khi tính cả năm đầu và năm cuối; 8 năm và 11 năm là các kết quả sai khi trừ nhầm.",
+          "topic": "Lịch sử: khởi nghĩa Lam Sơn",
+          "skill": "Tính khoảng thời gian từ hai mốc năm",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "không chia cho CPI năm trước",
-            "so với năm gốc"
+            "tính cả hai năm đầu và cuối trong khi đề yêu cầu lấy hiệu",
+            "trừ nhầm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-11",
+      "part": "tdkh",
+      "passage": "Ông A gửi tiết kiệm 200 triệu đồng, kỳ hạn 12 tháng, lãi suất 6%/năm, lãi trả một lần vào cuối kỳ (tính lãi đơn, không nhập lãi vào gốc). Nếu rút trước hạn, ngân hàng chỉ trả lãi theo mức không kỳ hạn là 0,5%/năm tính theo số ngày thực gửi.",
+      "questions": [
+        {
+          "n": 118,
+          "stem": "Nếu ông A gửi đủ 12 tháng thì tiền lãi nhận được là:",
+          "options": [
+            "212 triệu đồng",
+            "12 triệu đồng",
+            "6 triệu đồng",
+            "1,2 triệu đồng"
           ],
-          "n": 119
+          "answer": 1,
+          "explanation": "Tiền lãi là 200 × 6% = 12 triệu đồng. Giá trị 212 triệu đồng là tổng cả gốc lẫn lãi; 6 triệu đồng là khi lấy luôn lãi suất làm số tiền; 1,2 triệu đồng là khi sai bậc lũy thừa của 10.",
+          "topic": "Kinh tế: tiết kiệm và lãi suất",
+          "skill": "Tính tiền lãi khi gửi đủ kỳ hạn",
+          "difficulty": 1,
+          "level": "Nhận biết",
+          "mistake_tags": [
+            "nhầm tiền lãi với tổng tiền nhận",
+            "sai bậc lũy thừa của 10"
+          ]
         },
         {
-          "stem": "Năm 2022, tiền lương danh nghĩa của một người tăng 4% so với năm 2021. Về mặt sức mua, tiền lương thực tế của người đó thay đổi khoảng bao nhiêu?",
+          "n": 119,
+          "stem": "Nếu ông A rút tiền sau đúng 6 tháng thì tiền lãi nhận được là:",
           "options": [
-            "Giảm khoảng 1,0%",
-            "Tăng khoảng 4,0%",
-            "Giảm khoảng 5,05%",
-            "Tăng khoảng 1,0%"
+            "0,5 triệu đồng",
+            "1,0 triệu đồng",
+            "6,0 triệu đồng",
+            "0,05 triệu đồng"
           ],
           "answer": 0,
-          "explanation": "Giá cả tăng khoảng 5,05% trong khi lương danh nghĩa chỉ tăng 4%. Tiền lương thực tế thay đổi theo tỉ số 1,04 : 1,0505 ≈ 0,990, tức giảm khoảng 1,0%. Phương án giảm 5,05% là chỉ tính lạm phát mà quên lương tăng.",
-          "topic": "Kinh tế: CPI và lạm phát",
-          "skill": "Tính thay đổi của thu nhập thực tế",
-          "difficulty": 4,
-          "level": "Vận dụng cao",
+          "explanation": "Khi rút trước hạn, lãi tính theo mức không kỳ hạn 0,5%/năm trong 6 tháng (nửa năm): 200 × 0,5% × 0,5 = 0,5 triệu đồng. Giá trị 1,0 triệu đồng là lãi của cả năm theo mức không kỳ hạn; 6,0 triệu đồng là lãi theo lãi suất có kỳ hạn của nửa năm; 0,05 triệu đồng là sai bậc lũy thừa của 10.",
+          "topic": "Kinh tế: tiết kiệm và lãi suất",
+          "skill": "Tính tiền lãi khi rút trước hạn",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "quên so sánh lương với giá cả",
-            "coi lương danh nghĩa là sức mua"
+            "dùng sai lãi suất",
+            "quên điều chỉnh theo thời gian gửi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn5-12",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 120,
+          "stem": "Một doanh nghiệp nhập lô hàng trị giá 400 USD. Ban đầu 1 USD đổi được 24 000 đồng; sau đó tỉ giá tăng lên 25 200 đồng/USD. Số tiền đồng doanh nghiệp phải trả thêm cho lô hàng là:",
+          "options": [
+            "1 200 đồng",
+            "4 800 000 đồng",
+            "504 000 đồng",
+            "480 000 đồng"
           ],
-          "n": 120
+          "answer": 3,
+          "explanation": "Chênh lệch tỉ giá là 25 200 − 24 000 = 1 200 đồng/USD, nên số tiền phải trả thêm là 400 × 1 200 = 480 000 đồng (từ 9,6 triệu đồng lên 10,08 triệu đồng). Giá trị 1 200 đồng là chênh lệch trên mỗi USD, chưa nhân số USD; 4 800 000 đồng là sai bậc lũy thừa của 10; 504 000 đồng là 5% của 10,08 triệu đồng.",
+          "topic": "Kinh tế: tỉ giá hối đoái",
+          "skill": "Tính chênh lệch chi phí khi tỉ giá thay đổi",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "quên nhân với số USD",
+            "tính phần trăm trên giá trị sau thay đổi"
+          ]
         }
       ]
     }

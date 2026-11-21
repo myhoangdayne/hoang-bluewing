@@ -119,10 +119,10 @@ Hoàng BlueWing
 <div class="h32">
 <div class="h33"><h2 class="h34">Câu hỏi thường gặp</h2></div>
 <div class="faq">
-<details class="faq-item"><summary>Tôi có cần đăng nhập để làm bài không?</summary><p>Không. Bạn có thể làm bài ở chế độ khách, kết quả được lưu ngay trên trình duyệt đang dùng. Đăng nhập bằng Google khi bạn muốn đồng bộ kết quả, lịch sử và mục tiêu giữa nhiều thiết bị.</p></details>
+<details class="faq-item"><summary>Tôi có cần đăng nhập để làm bài không?</summary><p>Không. Bạn có thể làm bài ở chế độ khách, kết quả được lưu ngay trên trình duyệt đang dùng. Đăng nhập (bằng Google, email hoặc tên đăng nhập) khi bạn muốn đồng bộ kết quả, lịch sử và mục tiêu giữa nhiều thiết bị.</p></details>
 <details class="faq-item"><summary>Điểm trên web có giống điểm thi thật không?</summary><p>Không hoàn toàn. Web hiển thị số câu đúng và một con số quy đổi tham khảo theo tỉ lệ. Kỳ thi thật chấm theo phương pháp ứng đáp câu hỏi (IRT) nên mỗi câu có trọng số khác nhau.</p></details>
 <details class="faq-item"><summary>Nếu tôi lỡ đóng trình duyệt giữa chừng thì sao?</summary><p>Bài làm được lưu liên tục. Tuy nhiên đồng hồ chỉ dừng khi bạn bấm “Tạm dừng và lưu” (tối đa 3 lần cho mỗi đề). Nếu thoát mà chưa tạm dừng, thời gian vẫn trôi và bài sẽ tự nộp khi hết giờ.</p></details>
-<details class="faq-item"><summary>Dữ liệu của tôi được lưu ở đâu?</summary><p>Ở chế độ khách, dữ liệu nằm trong trình duyệt của bạn. Khi đăng nhập, dữ liệu học tập được lưu trong tài khoản của bạn trên Google Firebase. Xem thêm tại <a href="privacy.html">Chính sách quyền riêng tư</a>.</p></details>
+<details class="faq-item"><summary>Dữ liệu của tôi được lưu ở đâu?</summary><p>Ở chế độ khách, dữ liệu nằm trong trình duyệt của bạn. Khi đăng nhập, dữ liệu học tập được lưu trong tài khoản của bạn trên Google Firebase. Nếu bạn dùng tên đăng nhập thay vì email, web không thể khôi phục mật khẩu khi bạn quên. Xem thêm tại <a href="privacy.html">Chính sách quyền riêng tư</a>.</p></details>
 </div>
 </div>
 </section>
@@ -138,7 +138,7 @@ Hoàng BlueWing
 
 <footer class="h55">
 <span>Hoàng BlueWing · Dự án học phần</span>
-<span>Đề do Hoàng BlueWing biên soạn · <a href="privacy.html" class="footer-link">Chính sách quyền riêng tư</a></span>
+<span>Đề do Hoàng BlueWing biên soạn · <a href="privacy.html" class="footer-link">Chính sách quyền riêng tư</a> · <a href="#" class="footer-link" data-fb target="_blank" rel="noopener" hidden>Góp ý</a></span>
 </footer>
 
 </div>
@@ -568,11 +568,44 @@ Hoàng BlueWing
 </div>
 </section>
 
+<section class="r16 cmp-box" id="cmpBox" hidden>
+<div class="r17"><h2 class="h48">So sánh các lần làm đề này</h2></div>
+<p class="cmp-summary" id="cmpSummary"></p>
+<p class="cmp-viewing" id="cmpViewing" hidden></p>
+<div class="cmp-wrap" id="cmpTable"></div>
+<p class="x-note" id="cmpNote" hidden></p>
+</section>
+<style>
+.cmp-summary{margin:0 0 12px;line-height:1.6}
+.cmp-viewing{margin:0 0 12px;padding:10px 14px;background:var(--warn-bg);color:var(--warn-text);border-radius:8px;font-size:14px}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.cmp-table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+.cmp-table th,.cmp-table td{padding:10px 9px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.cmp-table thead th{font-size:12px;font-weight:600;color:var(--muted);background:var(--surface)}
+.cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0}
+.cmp-table tbody th{font-weight:600}
+.cmp-table tr.is-cur{background:var(--red-tint)}
+.cmp-tags{display:block;margin-top:3px}
+.cmp-badge{display:inline-block;margin-right:4px;padding:1px 7px;border-radius:999px;background:var(--ok-bg);color:var(--ok-text);font-size:11px;font-weight:600}
+.cmp-badge.cmp-new{background:var(--red-soft);color:var(--red-dark)}
+.cmp-up{color:var(--ok-strong);font-weight:700}
+.cmp-down{color:var(--bad-text);font-weight:700}
+.cmp-flat{color:var(--muted)}
+.cmp-view,.cmp-link{background:none;border:1px solid var(--brand);color:var(--brand);border-radius:6px;padding:5px 10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+.cmp-view:hover,.cmp-link:hover{background:var(--red-tint)}
+.cmp-link{margin-left:6px}
+</style>
+
 <section class="r16">
 <div class="r17"><h2 class="h48">Điểm theo từng phần</h2></div>
 <div id="resParts" class="x-parts"></div>
 <div id="resPdf" class="pdf-links"></div>
 <p class="x-note" id="resScale"></p>
+</section>
+
+<section class="pr-cta" id="practiceCta" hidden>
+<div class="pr-cta-text"><strong>Luyện lại chỗ chưa đúng</strong><span>Làm lại từng câu, xem đáp án và lời giải ngay sau mỗi câu. Phần này chỉ để ôn tập, không tính vào điểm.</span></div>
+<div class="pr-cta-btns" id="practiceBtns"></div>
 </section>
 
 <section class="r16">
@@ -622,8 +655,39 @@ Hoàng BlueWing
     <button type="button" class="bw-modal-close" data-close-modal="authModal" aria-label="Đóng">×</button>
     <span class="bw-modal-mark"><svg class="logo-mark" aria-hidden="true"><use href="#bw-logo"/></svg></span>
     <h2 id="authTitle">Đăng nhập BlueWing</h2>
-    <p class="bw-modal-copy">Đăng nhập bằng Google để lưu kết quả, lịch sử làm bài và mục tiêu học tập trên tài khoản của bạn.</p>
+    <p class="bw-modal-copy">Đăng nhập để lưu kết quả, lịch sử làm bài và mục tiêu học tập trên tài khoản của bạn.</p>
     <button type="button" class="google-login-btn" id="googleLoginBtn"><span class="google-g">G</span> Tiếp tục với Google</button>
+    <div class="auth-or"><span>hoặc</span></div>
+    <div class="auth-tabs" role="tablist" aria-label="Chọn đăng nhập hoặc tạo tài khoản">
+      <button type="button" class="is-on" data-auth-mode="login" role="tab" aria-selected="true">Đăng nhập</button>
+      <button type="button" data-auth-mode="register" role="tab" aria-selected="false">Tạo tài khoản</button>
+    </div>
+    <form id="pwForm" class="auth-form" novalidate>
+      <label for="pwId">Email hoặc tên đăng nhập</label>
+      <input id="pwId" type="text" autocomplete="username" autocapitalize="none" spellcheck="false">
+      <label for="pwPass">Mật khẩu</label>
+      <input id="pwPass" type="password" autocomplete="current-password">
+      <p class="auth-hint" id="pwHint" hidden>Dùng email của bạn, hoặc tự đặt tên đăng nhập (3 đến 20 ký tự: chữ thường không dấu, số, . _ -). Mật khẩu từ 6 ký tự.</p>
+      <p class="auth-warn" id="pwWarn" hidden><strong>Lưu ý:</strong> nếu dùng tên đăng nhập, web không thể khôi phục mật khẩu khi bạn quên. Hãy ghi nhớ kỹ, hoặc dùng email để có thể đặt lại.</p>
+      <button type="submit" class="auth-submit" id="pwSubmit">Đăng nhập</button>
+      <button type="button" class="auth-forgot" id="pwForgot">Quên mật khẩu?</button>
+    </form>
+    <style>
+    #authModal .auth-or{display:flex;align-items:center;gap:10px;margin:14px 0 10px;color:var(--ink-3,#7A6A6C);font-size:13px}
+    #authModal .auth-or:before,#authModal .auth-or:after{content:"";flex:1;height:1px;background:var(--line-strong,#D9C9CB)}
+    #authModal .auth-tabs{display:flex;gap:4px;margin-bottom:12px;border-bottom:1px solid var(--line-strong,#D9C9CB)}
+    #authModal .auth-tabs button{flex:1;background:none;border:0;border-bottom:3px solid transparent;padding:10px 4px;font-size:14px;font-weight:600;font-family:inherit;color:var(--ink-3,#7A6A6C);cursor:pointer}
+    #authModal .auth-tabs button.is-on{color:var(--brand,#B92525);border-bottom-color:var(--brand,#B92525)}
+    #authModal .auth-form{display:flex;flex-direction:column;gap:6px;text-align:left}
+    #authModal .auth-form label{font-size:13px;font-weight:600}
+    #authModal .auth-form input{font:inherit;font-size:15px;padding:11px 12px;min-height:44px;border:1px solid var(--line-strong,#D9C9CB);border-radius:8px;background:var(--bg,#fff);color:inherit}
+    #authModal .auth-hint{margin:2px 0;font-size:12.5px;color:var(--ink-3,#7A6A6C)}
+    #authModal .auth-warn{margin:2px 0;font-size:12.5px;color:#8A4B00;background:#FFF4E0;border:1px solid #F0D49A;border-radius:8px;padding:8px 10px}
+    #authModal .auth-submit{margin-top:6px;min-height:44px;border:0;border-radius:8px;background:var(--brand,#B92525);color:var(--on-brand,#fff);font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
+    #authModal .auth-submit:disabled{opacity:.6;cursor:default}
+    #authModal .auth-forgot{background:none;border:0;color:var(--brand,#B92525);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;padding:6px;align-self:center}
+    #authModal .auth-form[hidden],#authModal .auth-forgot[hidden]{display:none}
+    </style>
     <p class="bw-modal-note" id="authHelp">Dữ liệu được đồng bộ riêng theo tài khoản của bạn.</p>
     <p class="bw-modal-note">Bằng việc đăng nhập, bạn đồng ý với <a href="privacy.html" target="_blank" rel="noopener">Chính sách quyền riêng tư</a>. Bạn vẫn có thể làm bài ở chế độ khách mà không cần đăng nhập.</p>
     <p class="bw-modal-status" id="authStatus" role="status" aria-live="polite"></p>
@@ -668,6 +732,58 @@ Hoàng BlueWing
   </form>
 </div>
 
+<div class="pr-modal" id="practiceModal" hidden>
+  <div class="pr-card" role="dialog" aria-modal="true" aria-labelledby="prTitle">
+    <header class="pr-head">
+      <div class="pr-head-text"><strong id="prTitle">Luyện lại câu chưa đúng</strong><span id="prProg"></span></div>
+      <button type="button" class="pr-close" data-close-modal="practiceModal" aria-label="Đóng">×</button>
+    </header>
+    <div class="pr-bar"><i id="prBar"></i></div>
+    <div class="pr-body" id="prBody"></div>
+  </div>
+</div>
+<style>
+.pr-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 20px;padding:16px 20px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:10px}
+.pr-cta[hidden]{display:none}
+.pr-cta-text{display:flex;flex-direction:column;gap:2px;flex:1 1 280px}
+.pr-cta-text strong{font-size:16px}
+.pr-cta-text span{font-size:14px;color:var(--muted)}
+.pr-cta-btns,.pr-actions{display:flex;gap:10px;flex-wrap:wrap}
+.pr-start{min-height:44px;padding:10px 18px;border-radius:8px;border:1px solid var(--brand);background:var(--brand);color:var(--on-brand);font:600 14px/1.2 inherit;font-family:inherit;cursor:pointer}
+.pr-start:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+.pr-start-alt{background:transparent;color:var(--brand)}
+.pr-start-alt:hover{background:var(--red-tint);color:var(--brand-hover)}
+.pr-modal{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(20,10,12,.6)}
+.pr-modal[hidden]{display:none}
+.pr-card{width:min(780px,100%);max-height:100%;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);border:1px solid var(--line-strong);border-top:5px solid var(--brand);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);overflow:hidden}
+.pr-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px}
+.pr-head-text{display:flex;flex-direction:column}
+.pr-head-text strong{font-size:16px}
+.pr-head-text span{font-size:13px;color:var(--muted)}
+.pr-close{width:40px;height:40px;border-radius:50%;border:0;background:var(--surface);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+.pr-bar{height:4px;background:var(--line)}
+.pr-bar i{display:block;height:100%;width:0;background:var(--brand);transition:width .25s}
+.pr-body{padding:18px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;-webkit-overflow-scrolling:touch}
+.pr-body .x-ctx{border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.pr-q{display:flex;flex-direction:column;gap:14px}
+.pr-body .opt:disabled{cursor:default;opacity:1}
+.pr-body .opt.pr-ok{border-color:var(--ok-line);background:var(--ok-row)}
+.pr-body .opt.pr-ok .opt-letter{background:var(--ok-solid);color:#fff}
+.pr-body .opt.pr-bad{border-color:var(--bad-line);background:var(--bad-row)}
+.pr-body .opt.pr-bad .opt-letter{background:var(--bad-solid);color:#fff}
+.pr-fb{display:flex;flex-direction:column;gap:10px;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.pr-fb[hidden]{display:none}
+.pr-good{color:var(--ok-strong)}
+.pr-miss{color:var(--bad-text)}
+.pr-exp{font-size:15px;line-height:1.65}
+.pr-next{align-self:flex-end;min-height:44px;padding:10px 18px;border-radius:8px;border:0;background:var(--brand);color:var(--on-brand);font-size:14px;font-weight:600;font-family:inherit;cursor:pointer}
+.pr-done{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:18px 4px}
+.pr-score{font-size:44px;font-weight:800;color:var(--brand)}
+.pr-msg{margin:0;max-width:480px;line-height:1.6}
+.pr-actions{justify-content:center;margin-top:6px}
+@media (max-width:520px){.pr-modal{padding:0}.pr-card{border-radius:0;height:100%}.pr-next{align-self:stretch}.pr-cta-btns>*{flex:1 1 100%}}
+</style>
+
 <div class="bw-toast" id="bwToast" role="status" aria-live="polite" hidden></div>
 
 <!-- Công thức toán (KaTeX) -->
@@ -680,6 +796,7 @@ Hoàng BlueWing
 <script src="data/de-03.js"></script>
 <script src="data/de-04.js"></script>
 <script src="data/de-05.js"></script>
+<script src="data/de-06.js"></script>
 
 <!-- Firebase (đăng nhập, Firestore, Cloud Functions) -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
@@ -688,5 +805,49 @@ Hoàng BlueWing
 <script src="firebase-config.js"></script>
 
 <script src="app.js"></script>
+<!-- ===== Thông báo cho người vào web ===== -->
+<style>
+#hbNotice{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(20,10,12,.55)}
+#hbNotice[hidden]{display:none}
+#hbNotice .hbn-card{width:min(480px,100%);background:var(--bg,#FAF6F5);color:var(--ink,#2A1A1C);border:1px solid var(--line-strong,#D9C9CB);border-top:5px solid var(--brand,#B92525);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35);padding:22px 22px 20px;font:15px/1.6 'Be Vietnam Pro',system-ui,sans-serif}
+#hbNotice h2{margin:0 0 8px;font-size:18px;line-height:1.3}
+#hbNotice p{margin:0 0 18px;color:var(--ink-2,#4A3C3E)}
+#hbNotice .hbn-act{display:flex;gap:10px;flex-wrap:wrap}
+#hbNotice button,#hbNotice a{font-weight:600;font-size:14px;font-family:inherit;border-radius:8px;padding:11px 18px;cursor:pointer;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+#hbNotice .hbn-ok{background:var(--brand,#B92525);color:var(--on-brand,#fff);border:1px solid var(--brand,#B92525)}
+#hbNotice .hbn-fb{background:transparent;color:var(--brand,#B92525);border:1px solid var(--brand,#B92525)}
+@media (max-width:480px){#hbNotice .hbn-act>*{flex:1 1 100%}}
+</style>
+<div id="hbNotice" hidden>
+  <div class="hbn-card" role="dialog" aria-modal="true" aria-labelledby="hbnT" aria-describedby="hbnD">
+    <h2 id="hbnT">Lưu ý trước khi làm bài</h2>
+    <p id="hbnD">Các đề trên trang này chỉ nhằm mục đích <strong>tham khảo và luyện tập</strong>, không phải đề thi chính thức. Nếu bạn thấy lỗi hoặc muốn đề xuất thêm nội dung, rất mong được nghe góp ý của bạn.</p>
+    <div class="hbn-act">
+      <button type="button" class="hbn-ok" id="hbnOk">Đã hiểu</button>
+      <a class="hbn-fb" data-fb href="#" target="_blank" rel="noopener" hidden>Gửi góp ý</a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var FEEDBACK_URL = 'https://forms.gle/zQKqrrh3CA1Ae5TF7';   // <<< DÁN LINK GOOGLE FORM CỦA CẬU VÀO GIỮA HAI DẤU NHÁY
+  var KEY = 'hb_notice_v1';
+  if (FEEDBACK_URL) {
+    var fbs = document.querySelectorAll('[data-fb]');
+    for (var i = 0; i < fbs.length; i++) { fbs[i].href = FEEDBACK_URL; fbs[i].hidden = false; }
+  }
+  var box = document.getElementById('hbNotice'); if (!box) return;
+  var ok = document.getElementById('hbnOk');
+  function close() {
+    box.hidden = true;
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  ok.onclick = close;
+  document.addEventListener('keydown', onKey);
+  box.hidden = false;
+  ok.focus();
+})();
+</script>
 </body>
 </html>

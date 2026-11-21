@@ -1445,28 +1445,28 @@
       ]
     },
     {
-      "id": "toan4-62",
+      "id": "geo4-62",
       "part": "toan",
       "questions": [
         {
-          "stem": "Tập xác định của hàm số \\(y=\\log_2(x^2-5x+6)\\) là",
+          "n": 62,
+          "stem": "Cho hình chóp đều \\(S.ABCD\\) có đáy là hình vuông cạnh \\(a\\) và cạnh bên bằng \\(a\\sqrt2\\). Gọi \\(\\varphi\\) là góc giữa mặt bên \\((SAB)\\) và mặt đáy. Giá trị \\(\\tan\\varphi\\) bằng",
           "options": [
-            "\\((2;3)\\)",
-            "\\((-\\infty;2]\\cup[3;+\\infty)\\)",
-            "\\((-\\infty;2)\\cup(3;+\\infty)\\)",
-            "\\(\\mathbb R\\setminus\\{2;3\\}\\)"
+            "\\(\\sqrt3\\)",
+            "\\(2\\sqrt2\\)",
+            "\\(\\sqrt6\\)",
+            "\\(\\sqrt2\\)"
           ],
           "answer": 2,
-          "explanation": "Hàm số xác định khi \\(x^2-5x+6>0\\Leftrightarrow (x-2)(x-3)>0\\Leftrightarrow x<2\\) hoặc \\(x>3\\). Vậy tập xác định là \\((-\\infty;2)\\cup(3;+\\infty)\\).",
-          "topic": "Mũ và logarit",
-          "skill": "Tìm tập xác định hàm logarit",
-          "difficulty": 1,
-          "level": "Nhận biết",
+          "explanation": "Gọi \\(O\\) là tâm đáy, \\(M\\) là trung điểm \\(AB\\). Có \\(OA=\\dfrac{a\\sqrt2}{2}\\) nên \\(SO=\\sqrt{2a^2-\\dfrac{a^2}{2}}=\\dfrac{a\\sqrt6}{2}\\). Góc cần tìm là \\(\\widehat{SMO}\\) với \\(OM=\\dfrac a2\\), do đó \\(\\tan\\varphi=\\dfrac{SO}{OM}=\\sqrt6\\).",
+          "topic": "Góc nhị diện",
+          "skill": "Tính góc giữa mặt bên và mặt đáy của chóp đều",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "lấy cả dấu bằng",
-            "nhầm dấu bất phương trình"
-          ],
-          "n": 62
+            "lấy (OA) thay cho (OM)",
+            "tính sai chiều cao (SO)"
+          ]
         }
       ]
     },
@@ -1497,52 +1497,54 @@
       ]
     },
     {
-      "id": "toan4-64",
+      "id": "geo4-64",
       "part": "toan",
       "questions": [
         {
-          "stem": "Giá trị nhỏ nhất của hàm số \\(y=x+\\sqrt{4-x^2}\\) trên tập xác định là",
+          "n": 64,
+          "stem": "Trong không gian \\(Oxyz\\), cho hai đường thẳng \\(d_1\\) đi qua \\(A(1;0;-1)\\) có vectơ chỉ phương \\(\\vec u=(1;2;1)\\) và \\(d_2\\) đi qua \\(B(0;1;2)\\) có vectơ chỉ phương \\(\\vec v=(2;-1;0)\\). Khoảng cách giữa \\(d_1\\) và \\(d_2\\) bằng",
           "options": [
-            "\\(2\\)",
-            "\\(-2\\)",
-            "\\(2\\sqrt2\\)",
-            "\\(0\\)"
+            "\\(\\dfrac{7\\sqrt{30}}{30}\\)",
+            "\\(\\dfrac{7\\sqrt{30}}{15}\\)",
+            "\\(\\dfrac{14}{5}\\)",
+            "\\(\\dfrac{\\sqrt{30}}{3}\\)"
           ],
           "answer": 1,
-          "explanation": "Tập xác định \\([-2;2]\\). \\(y'=1-\\dfrac{x}{\\sqrt{4-x^2}}=0\\Leftrightarrow x=\\sqrt2\\). So sánh \\(y(-2)=-2\\), \\(y(2)=2\\), \\(y(\\sqrt2)=2\\sqrt2\\), giá trị nhỏ nhất là \\(-2\\).",
-          "topic": "Hàm số",
-          "skill": "Giá trị lớn nhất – nhỏ nhất trên đoạn",
-          "difficulty": 2,
-          "level": "Vận dụng",
+          "explanation": "\\([\\vec u,\\vec v]=(1;2;-5)\\), \\(|[\\vec u,\\vec v]|=\\sqrt{30}\\); \\(\\overrightarrow{AB}=(-1;1;3)\\) nên \\(\\overrightarrow{AB}\\cdot[\\vec u,\\vec v]=-1+2-15=-14\\neq0\\) (hai đường chéo nhau). Khoảng cách \\(=\\dfrac{14}{\\sqrt{30}}=\\dfrac{14\\sqrt{30}}{30}=\\dfrac{7\\sqrt{30}}{15}\\).",
+          "topic": "Khoảng cách giữa hai đường thẳng chéo nhau",
+          "skill": "Tính khoảng cách hai đường chéo nhau trong Oxyz",
+          "difficulty": 4,
+          "level": "Vận dụng cao",
           "mistake_tags": [
-            "quên xét đầu mút"
-          ],
-          "n": 64
+            "quên kiểm tra chéo nhau",
+            "rút gọn sai"
+          ]
         }
       ]
     },
     {
-      "id": "toan4-65",
+      "id": "geo4-65",
       "part": "toan",
       "questions": [
         {
-          "stem": "Giá trị của \\(\\displaystyle\\int_0^1 xe^x\\,dx\\) bằng",
+          "n": 65,
+          "stem": "Cho tam giác \\(ABC\\) vuông cân tại \\(A\\) có \\(BC=2a\\). Quay tam giác quanh cạnh \\(AB\\), ta được khối nón có thể tích bằng",
           "options": [
-            "\\(e-1\\)",
-            "\\(e\\)",
-            "\\(e+1\\)",
-            "\\(1\\)"
+            "\\(\\dfrac{2\\pi a^3}{3}\\)",
+            "\\(\\dfrac{\\sqrt2\\pi a^3}{3}\\)",
+            "\\(2\\sqrt2\\pi a^3\\)",
+            "\\(\\dfrac{2\\sqrt2\\pi a^3}{3}\\)"
           ],
           "answer": 3,
-          "explanation": "Đặt \\(u=x,\\ dv=e^xdx\\), được \\(du=dx,\\ v=e^x\\). Tích phân bằng \\(\\left.xe^x\\right|_0^1-\\int_0^1e^xdx=e-(e-1)=1\\).",
-          "topic": "Tích phân",
-          "skill": "Tích phân từng phần",
-          "difficulty": 2,
-          "level": "Thông hiểu",
+          "explanation": "Tam giác vuông cân có cạnh huyền \\(2a\\) nên \\(AB=AC=a\\sqrt2\\). Quay quanh \\(AB\\): chiều cao \\(h=AB=a\\sqrt2\\), bán kính \\(r=AC=a\\sqrt2\\). \\(V=\\dfrac13\\pi r^2h=\\dfrac13\\pi\\cdot2a^2\\cdot a\\sqrt2=\\dfrac{2\\sqrt2\\pi a^3}{3}\\).",
+          "topic": "Khối nón",
+          "skill": "Tính thể tích khối tròn xoay sinh bởi tam giác vuông cân",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "sai dấu khi lấy từng phần"
-          ],
-          "n": 65
+            "nhầm cạnh góc vuông với cạnh huyền",
+            "quên hệ số (\tfrac13)"
+          ]
         }
       ]
     },
@@ -1649,77 +1651,80 @@
       ]
     },
     {
-      "id": "toan4-70",
+      "id": "geo4-70",
       "part": "toan",
       "questions": [
         {
-          "stem": "Số nghiệm của phương trình \\(\\sin 2x=0\\) trên đoạn \\([0;2\\pi]\\) là",
+          "n": 70,
+          "stem": "Trong mặt phẳng \\(Oxy\\), cho đường tròn \\((C):\\ (x-2)^2+(y+1)^2=9\\) và đường thẳng \\(\\Delta:\\ 3x+4y-m=0\\). Tổng tất cả các giá trị của \\(m\\) để \\(\\Delta\\) tiếp xúc với \\((C)\\) bằng",
           "options": [
-            "\\(3\\)",
-            "\\(5\\)",
+            "\\(2\\)",
             "\\(4\\)",
-            "\\(6\\)"
+            "\\(30\\)",
+            "\\(-4\\)"
           ],
           "answer": 1,
-          "explanation": "\\(\\sin 2x=0\\Leftrightarrow 2x=k\\pi\\Leftrightarrow x=\\dfrac{k\\pi}{2}\\). Trên \\([0;2\\pi]\\), \\(k=0,1,2,3,4\\), có \\(5\\) nghiệm.",
-          "topic": "Lượng giác",
-          "skill": "Phương trình lượng giác cơ bản",
-          "difficulty": 1,
-          "level": "Nhận biết",
+          "explanation": "Tâm \\(I(2;-1)\\), \\(R=3\\). Tiếp xúc khi \\(d(I,\\Delta)=\\dfrac{|6-4-m|}{5}=3\\iff|2-m|=15\\), suy ra \\(m=-13\\) hoặc \\(m=17\\). Tổng \\(=4\\).",
+          "topic": "Đường thẳng và đường tròn",
+          "skill": "Tìm tham số để đường thẳng tiếp xúc với đường tròn",
+          "difficulty": 3,
+          "level": "Vận dụng",
           "mistake_tags": [
-            "bỏ sót nghiệm ở biên"
-          ],
-          "n": 70
+            "chỉ lấy một giá trị của (m)",
+            "sai dấu khi bỏ giá trị tuyệt đối"
+          ]
         }
       ]
     },
     {
-      "id": "toan4-71",
+      "id": "geo4-71",
       "part": "toan",
       "questions": [
         {
-          "stem": "Giới hạn \\(\\displaystyle\\lim_{n\\to+\\infty}\\left(\\sqrt{n^2+2n}-n\\right)\\) bằng",
+          "n": 71,
+          "stem": "Cắt mặt cầu bán kính \\(5\\) bởi một mặt phẳng cách tâm một khoảng bằng \\(3\\), ta được thiết diện là hình tròn có diện tích bằng",
           "options": [
-            "\\(1\\)",
-            "\\(2\\)",
-            "\\(0\\)",
-            "\\(+\\infty\\)"
+            "\\(16\\pi\\)",
+            "\\(4\\pi\\)",
+            "\\(25\\pi\\)",
+            "\\(34\\pi\\)"
           ],
           "answer": 0,
-          "explanation": "Nhân liên hợp: \\(\\dfrac{2n}{\\sqrt{n^2+2n}+n}=\\dfrac{2}{\\sqrt{1+\\frac2n}+1}\\to1\\).",
-          "topic": "Giới hạn",
-          "skill": "Giới hạn dạng vô định ∞−∞",
+          "explanation": "Bán kính hình tròn thiết diện \\(r=\\sqrt{R^2-d^2}=\\sqrt{25-9}=4\\). Diện tích \\(=\\pi r^2=16\\pi\\). Con số \\(34\\pi\\) là \\(\\pi(R^2+d^2)\\), cộng thay vì trừ.",
+          "topic": "Khối cầu",
+          "skill": "Tính diện tích thiết diện của mặt cầu",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "quên chia mẫu"
-          ],
-          "n": 71
+            "cộng thay vì trừ (d^2)",
+            "dùng (R) làm bán kính thiết diện"
+          ]
         }
       ]
     },
     {
-      "id": "toan4-72",
+      "id": "geo4-72",
       "part": "toan",
       "questions": [
         {
-          "stem": "Một hộp có 5 quả cầu đỏ và 3 quả cầu xanh. Lấy ngẫu nhiên 2 quả. Xác suất để lấy được ít nhất một quả đỏ là",
+          "n": 72,
+          "stem": "Cho hình trụ có bán kính đáy \\(5\\) và chiều cao \\(6\\). Cắt hình trụ bởi mặt phẳng song song với trục và cách trục một khoảng bằng \\(3\\). Diện tích thiết diện bằng",
           "options": [
-            "\\(\\dfrac{15}{28}\\)",
-            "\\(\\dfrac{3}{28}\\)",
-            "\\(\\dfrac{5}{14}\\)",
-            "\\(\\dfrac{25}{28}\\)"
+            "\\(60\\)",
+            "\\(36\\)",
+            "\\(24\\)",
+            "\\(48\\)"
           ],
           "answer": 3,
-          "explanation": "Xác suất không lấy được quả đỏ nào là \\(\\dfrac{C_3^2}{C_8^2}=\\dfrac{3}{28}\\). Vậy xác suất ít nhất một quả đỏ là \\(1-\\dfrac{3}{28}=\\dfrac{25}{28}\\).",
-          "topic": "Xác suất",
-          "skill": "Xác suất tổ hợp, biến cố đối",
-          "difficulty": 2,
+          "explanation": "Thiết diện là hình chữ nhật có một cạnh bằng chiều cao \\(6\\) và cạnh kia là dây cung của đường tròn đáy: \\(2\\sqrt{5^2-3^2}=8\\). Diện tích \\(=6\\cdot8=48\\).",
+          "topic": "Khối trụ",
+          "skill": "Tính diện tích thiết diện song song với trục của hình trụ",
+          "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "quên lấy phần bù"
-          ],
-          "n": 72
+            "quên nhân đôi nửa dây cung",
+            "nhầm với thiết diện qua trục"
+          ]
         }
       ]
     },
@@ -2390,392 +2395,437 @@
     {
       "id": "khtn4-01",
       "part": "tdkh",
-      "passage": "Một máy biến áp hạ áp có cuộn sơ cấp 1100 vòng và cuộn thứ cấp 60 vòng. Nối cuộn sơ cấp vào nguồn xoay chiều điện áp hiệu dụng 220 V, thứ cấp nối với một bóng đèn ghi 12 V – 24 W. Với máy biến áp lí tưởng, tỉ số điện áp bằng tỉ số số vòng dây: U₂/U₁ = N₂/N₁. Khi đo thực tế, đèn sáng bình thường và ampe kế ở cuộn sơ cấp chỉ 0,125 A.",
+      "passage": "Trong phòng thí nghiệm, một học sinh cần pha loãng dung dịch HCl 2,0 M để thu được 500 mL dung dịch HCl 0,10 M. Khi pha loãng, số mol chất tan không đổi nên \\(C_1V_1 = C_2V_2\\). Sau đó, học sinh trộn 200 mL dung dịch HCl 0,10 M với 300 mL dung dịch HCl 0,30 M (coi thể tích dung dịch sau khi trộn bằng tổng thể tích hai dung dịch).",
       "questions": [
         {
-          "stem": "Điện áp hiệu dụng ở cuộn thứ cấp của máy biến áp lí tưởng trên là:",
+          "n": 103,
+          "stem": "Thể tích dung dịch HCl 2,0 M cần lấy để pha loãng là:",
           "options": [
-            "22 V",
-            "12 V",
-            "4 V",
-            "120 V"
+            "50 mL",
+            "250 mL",
+            "25 mL",
+            "10 mL"
           ],
-          "answer": 1,
-          "explanation": "U₂ = U₁ · N₂/N₁ = 220 · 60/1100 = 12 V. Phương án 22 V và 120 V là nhầm số vòng dây, còn 4 V là chia thay vì nhân tỉ số.",
-          "topic": "Vật lí: máy biến áp",
-          "skill": "Tính điện áp thứ cấp lí tưởng",
+          "answer": 2,
+          "explanation": "Số mol HCl cần có là 0,10 × 0,500 = 0,050 mol, nên thể tích dung dịch gốc là \\(V_1 = \\dfrac{0{,}050}{2{,}0} = 0{,}025\\) L = 25 mL. Giá trị 50 mL là số mmol HCl cần có, chưa chia cho nồng độ 2,0 M; 250 mL là một nửa thể tích dung dịch cuối; 10 mL là sai bậc lũy thừa của 10.",
+          "topic": "Hóa học: pha chế dung dịch",
+          "skill": "Áp dụng công thức pha loãng",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "đảo tỉ số vòng dây",
-            "tính nhầm đơn vị"
-          ],
-          "n": 103
+            "quên chia cho nồng độ dung dịch gốc",
+            "sai bậc lũy thừa của 10"
+          ]
         },
         {
-          "stem": "Hiệu suất của máy biến áp trong thí nghiệm thực tế gần nhất với giá trị nào?",
+          "n": 104,
+          "stem": "Nồng độ mol của dung dịch HCl sau khi trộn là:",
           "options": [
-            "100%",
-            "55%",
-            "87%",
-            "92%"
+            "0,22 M",
+            "0,20 M",
+            "0,11 M",
+            "0,44 M"
           ],
-          "answer": 2,
-          "explanation": "Công suất sơ cấp P₁ = U₁I₁ = 220 · 0,125 = 27,5 W. Công suất có ích ở thứ cấp (đèn sáng bình thường) P₂ = 24 W. Hiệu suất H = P₂/P₁ = 24/27,5 ≈ 0,873 ≈ 87%. Máy lí tưởng mới có H = 100%; phần chênh lệch là tổn hao do điện trở dây và dòng Fu-cô.",
-          "topic": "Vật lí: máy biến áp",
-          "skill": "Tính hiệu suất máy biến áp",
+          "answer": 0,
+          "explanation": "Tổng số mol HCl là 0,200 × 0,10 + 0,300 × 0,30 = 0,020 + 0,090 = 0,110 mol, thể tích dung dịch sau trộn là 0,500 L nên nồng độ là 0,110/0,500 = 0,22 M. Giá trị 0,20 M là trung bình cộng hai nồng độ (không tính đến thể tích mỗi phần); 0,11 M là số mol, chưa chia cho thể tích; 0,44 M là khi chia cho 0,25 L.",
+          "topic": "Hóa học: pha chế dung dịch",
+          "skill": "Tính nồng độ sau khi trộn hai dung dịch cùng chất tan",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "quên so sánh công suất vào/ra",
-            "coi máy thực tế là lí tưởng"
-          ],
-          "n": 104
-        },
-        {
-          "stem": "Giữ nguyên U₁ = 220 V và N₂ = 60 vòng, nếu giảm số vòng cuộn sơ cấp xuống còn 1000 vòng thì điện áp thứ cấp (lí tưởng) là:",
-          "options": [
-            "12 V",
-            "11 V",
-            "13,2 V",
-            "24 V"
-          ],
-          "answer": 2,
-          "explanation": "U₂ = 220 · 60/1000 = 13,2 V. Giảm N₁ thì U₂ tăng tỉ lệ nghịch với N₁. Phương án 11 V ứng với N₁ = 1200 vòng, tức là nhầm chiều thay đổi (tăng N₁ thay vì giảm).",
-          "topic": "Vật lí: máy biến áp",
-          "skill": "Dự đoán sự thay đổi khi đổi số vòng",
-          "difficulty": 3,
-          "level": "Vận dụng",
-          "mistake_tags": [
-            "nhầm quan hệ tỉ lệ nghịch",
-            "đổi chiều thay đổi"
-          ],
-          "n": 105
+            "lấy trung bình cộng hai nồng độ",
+            "nhầm số mol với nồng độ"
+          ]
         }
       ]
     },
     {
       "id": "khtn4-02",
       "part": "tdkh",
-      "passage": "Để xác định nồng độ dung dịch HCl, một học sinh lấy 20,0 mL dung dịch HCl vào bình nón, nhỏ vài giọt phenolphtalein (đổi màu hồng khi pH khoảng 8,2 – 10) rồi chuẩn độ bằng dung dịch NaOH 0,10 M từ buret. Thể tích NaOH tiêu tốn ở ba lần chuẩn độ lần lượt là 15,9 mL; 16,0 mL; 16,1 mL. Coi thể tích dung dịch là cộng được và phản ứng xảy ra hoàn toàn: HCl + NaOH → NaCl + H₂O.",
       "questions": [
         {
-          "stem": "Nồng độ của dung dịch HCl ban đầu là:",
+          "n": 105,
+          "stem": "Cho 7,8 g hỗn hợp gồm Mg và Al tác dụng hết với dung dịch HCl dư, thu được 8,96 L khí H<sub>2</sub> (ở điều kiện tiêu chuẩn). Khối lượng Mg trong hỗn hợp là:",
           "options": [
-            "0,080 M",
-            "0,125 M",
-            "0,10 M",
-            "0,16 M"
-          ],
-          "answer": 0,
-          "explanation": "Thể tích NaOH trung bình là (15,9 + 16,0 + 16,1)/3 = 16,0 mL. Số mol NaOH = 0,10 · 16,0 = 1,60 mmol = số mol HCl. Nồng độ HCl = 1,60 mmol / 20,0 mL = 0,080 M. Phương án 0,125 M là đảo tỉ số thể tích.",
-          "topic": "Hóa học: chuẩn độ axit – bazơ",
-          "skill": "Tính nồng độ dung dịch từ kết quả chuẩn độ",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "đảo tỉ lệ thể tích",
-            "quên lấy trung bình"
-          ],
-          "n": 106
-        },
-        {
-          "stem": "Tại điểm tương đương của phép chuẩn độ này, nhận định nào sau đây là đúng?",
-          "options": [
-            "pH của dung dịch lớn hơn 7 vì NaOH còn dư",
-            "pH của dung dịch nhỏ hơn 7 vì còn HCl",
-            "pH của dung dịch xấp xỉ 7; dùng phenolphtalein thì màu hồng nhạt xuất hiện ngay sau điểm tương đương",
-            "Dung dịch chứa HCl và NaOH với số mol bằng nhau"
+            "5,4 g",
+            "4,8 g",
+            "2,4 g",
+            "1,2 g"
           ],
           "answer": 2,
-          "explanation": "Axit mạnh phản ứng vừa đủ với bazơ mạnh tạo muối NaCl không thủy phân, nên pH ≈ 7 tại điểm tương đương. Chỉ cần dư một giọt NaOH, pH tăng vượt 8,2 và phenolphtalein chuyển hồng, báo hiệu vừa quá điểm tương đương. HCl và NaOH đã phản ứng hết nên không còn cả hai chất.",
-          "topic": "Hóa học: chuẩn độ axit – bazơ",
-          "skill": "Hiểu điểm tương đương và chất chỉ thị",
+          "explanation": "Số mol H<sub>2</sub> là 8,96/22,4 = 0,40 mol. Gọi x, y lần lượt là số mol Mg và Al: 24x + 27y = 7,8 và x + 1,5y = 0,40 (Mg cho 2 electron, Al cho 3 electron). Giải ra x = 0,10 và y = 0,20, nên khối lượng Mg là 0,10 × 24 = 2,4 g. Giá trị 5,4 g là khối lượng Al; 4,8 g ứng với 0,20 mol Mg (nhầm hệ số electron); 1,2 g là một nửa kết quả đúng.",
+          "topic": "Hóa học: kim loại tác dụng với axit",
+          "skill": "Giải hệ phương trình từ khối lượng hỗn hợp và thể tích khí",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "nhầm điểm tương đương với điểm dư bazơ"
-          ],
-          "n": 107
-        },
-        {
-          "stem": "Nếu thêm vào 20,0 mL dung dịch HCl trên đúng 20,0 mL dung dịch NaOH 0,10 M thì pH của dung dịch thu được bằng:",
-          "options": [
-            "7",
-            "13",
-            "2",
-            "12"
-          ],
-          "answer": 3,
-          "explanation": "Số mol OH⁻ ban đầu = 0,10 · 20,0 = 2,0 mmol; số mol H⁺ = 0,080 · 20,0 = 1,6 mmol. OH⁻ dư 0,4 mmol trong tổng thể tích 40,0 mL nên [OH⁻] = 0,010 M, pOH = 2 và pH = 12. Phương án 13 lấy nhầm nồng độ NaOH ban đầu (0,10 M) làm [OH⁻] mà quên rằng một phần đã trung hòa và dung dịch bị pha loãng khi trộn.",
-          "topic": "Hóa học: chuẩn độ axit – bazơ",
-          "skill": "Tính pH sau khi dư bazơ",
-          "difficulty": 4,
-          "level": "Vận dụng cao",
-          "mistake_tags": [
-            "quên cộng thể tích khi trộn",
-            "nhầm pH và pOH"
-          ],
-          "n": 108
+            "nhầm khối lượng hai kim loại",
+            "sai hệ số electron của kim loại"
+          ]
         }
       ]
     },
     {
       "id": "khtn4-03",
       "part": "tdkh",
-      "passage": "Trong một hệ sinh thái, năng lượng được truyền qua chuỗi thức ăn: sinh vật sản xuất → sinh vật tiêu thụ bậc 1 → bậc 2 → bậc 3. Số liệu năng lượng đồng hóa ở mỗi bậc (kcal/m²/năm) được đo như sau. Hiệu suất sinh thái giữa hai bậc liên tiếp là tỉ số năng lượng của bậc sau với bậc trước.<table class=\"bank-table\"><thead><tr><th>Bậc dinh dưỡng</th><th>Năng lượng (kcal/m²/năm)</th></tr></thead><tbody><tr><td>Sinh vật sản xuất</td><td>10 000</td></tr><tr><td>Sinh vật tiêu thụ bậc 1</td><td>1 000</td></tr><tr><td>Sinh vật tiêu thụ bậc 2</td><td>120</td></tr><tr><td>Sinh vật tiêu thụ bậc 3</td><td>9</td></tr></tbody></table>",
+      "passage": "Một vật được ném ngang từ độ cao 20 m so với mặt đất với vận tốc đầu \\(v_0 = 15\\) m/s. Bỏ qua sức cản của không khí, lấy \\(g = 10\\) m/s². Theo phương ngang vật chuyển động đều; theo phương thẳng đứng vật rơi tự do không vận tốc đầu.",
       "questions": [
         {
-          "stem": "Hiệu suất sinh thái từ sinh vật tiêu thụ bậc 1 sang bậc 2 là:",
+          "n": 106,
+          "stem": "Thời gian từ lúc ném đến lúc vật chạm đất là:",
           "options": [
-            "12%",
-            "10%",
-            "8%",
-            "1,2%"
-          ],
-          "answer": 0,
-          "explanation": "Hiệu suất = 120 : 1000 = 0,12 = 12%. Con số 10% là hiệu suất từ sinh vật sản xuất sang bậc 1 (1000 : 10000); 1,2% là tỉ lệ so với sinh vật sản xuất (120 : 10000).",
-          "topic": "Sinh học: dòng năng lượng trong hệ sinh thái",
-          "skill": "Tính hiệu suất sinh thái giữa các bậc",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "chọn nhầm hai bậc liên tiếp",
-            "so với sinh vật sản xuất thay vì bậc liền trước"
-          ],
-          "n": 109
-        },
-        {
-          "stem": "Nhận xét nào sau đây phù hợp với số liệu của bảng?",
-          "options": [
-            "Năng lượng tăng dần qua các bậc vì sinh vật ăn thịt mạnh hơn",
-            "Năng lượng được bảo toàn hoàn toàn khi truyền sang bậc sau",
-            "Năng lượng giảm dần qua các bậc dinh dưỡng, nên chuỗi thức ăn thường có rất ít bậc",
-            "Hiệu suất sinh thái giữa các bậc luôn bằng đúng 10%"
-          ],
-          "answer": 2,
-          "explanation": "Năng lượng ở mỗi bậc nhỏ hơn bậc trước do phần lớn bị mất qua hô hấp, nhiệt, chất thải; vì vậy chuỗi thức ăn bị giới hạn ở khoảng 4–5 bậc. Hiệu suất trong bảng là 10%, 12% và 7,5%, không cố định 10% (quy tắc 10% chỉ là giá trị gần đúng).",
-          "topic": "Sinh học: dòng năng lượng trong hệ sinh thái",
-          "skill": "Nhận xét xu hướng từ số liệu",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "nhầm quy tắc 10% là chính xác tuyệt đối"
-          ],
-          "n": 110
-        },
-        {
-          "stem": "Muốn năng lượng ở sinh vật tiêu thụ bậc 3 đạt 18 kcal/m²/năm mà hiệu suất giữa bậc 2 và bậc 3 không đổi, năng lượng ở bậc 2 phải bằng:",
-          "options": [
-            "162 kcal/m²/năm",
-            "120 kcal/m²/năm",
-            "1350 kcal/m²/năm",
-            "240 kcal/m²/năm"
+            "4 s",
+            "1 s",
+            "1,41 s",
+            "2 s"
           ],
           "answer": 3,
-          "explanation": "Hiệu suất bậc 2 → bậc 3 là 9 : 120 = 7,5%. Để bậc 3 đạt 18 thì bậc 2 cần 18 : 0,075 = 240 kcal/m²/năm. Phương án 162 là nhân 18 với 9 thay vì chia cho hiệu suất.",
-          "topic": "Sinh học: dòng năng lượng trong hệ sinh thái",
-          "skill": "Suy ngược năng lượng ở bậc trước",
+          "explanation": "Theo phương thẳng đứng \\(h = \\dfrac{1}{2}gt^2\\) nên \\(t = \\sqrt{\\dfrac{2h}{g}} = \\sqrt{\\dfrac{2 \\times 20}{10}} = 2\\) s. Giá trị 4 s là khi quên lấy căn bậc hai; 1 s là khi lấy \\(h/(2g)\\); 1,41 s là khi quên hệ số 2 trong biểu thức dưới dấu căn.",
+          "topic": "Vật lí: chuyển động ném ngang",
+          "skill": "Tính thời gian rơi",
+          "difficulty": 2,
+          "level": "Thông hiểu",
+          "mistake_tags": [
+            "quên lấy căn bậc hai",
+            "sai biểu thức tính thời gian rơi"
+          ]
+        },
+        {
+          "n": 107,
+          "stem": "Độ lớn vận tốc của vật ngay trước khi chạm đất là:",
+          "options": [
+            "35 m/s",
+            "25 m/s",
+            "20 m/s",
+            "15 m/s"
+          ],
+          "answer": 1,
+          "explanation": "Khi chạm đất, thành phần ngang vẫn là \\(v_x = 15\\) m/s, thành phần đứng là \\(v_y = gt = 10 \\times 2 = 20\\) m/s. Độ lớn vận tốc là \\(v = \\sqrt{15^2 + 20^2} = 25\\) m/s. Giá trị 35 m/s là khi cộng đại số hai thành phần; 20 m/s chỉ là thành phần đứng; 15 m/s chỉ là thành phần ngang.",
+          "topic": "Vật lí: chuyển động ném ngang",
+          "skill": "Tổng hợp vận tốc theo hai phương",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "nhân thay vì chia cho hiệu suất"
-          ],
-          "n": 111
+            "cộng đại số hai thành phần vuông góc",
+            "chỉ xét một thành phần của vận tốc"
+          ]
         }
       ]
     },
     {
       "id": "khtn4-04",
       "part": "tdkh",
-      "passage": "Bảng dưới đây (số liệu minh họa) cho biết sản lượng điện của một quốc gia theo nguồn năng lượng trong hai năm (đơn vị: tỉ kWh).<table class=\"bank-table\"><thead><tr><th>Nguồn điện</th><th>Năm 2015</th><th>Năm 2023</th></tr></thead><tbody><tr><td>Thủy điện</td><td>60</td><td>85</td></tr><tr><td>Nhiệt điện than</td><td>50</td><td>130</td></tr><tr><td>Điện khí</td><td>45</td><td>40</td></tr><tr><td>Năng lượng tái tạo và khác</td><td>5</td><td>45</td></tr><tr><td>Tổng</td><td>160</td><td>300</td></tr></tbody></table>",
       "questions": [
         {
-          "stem": "Năm 2023, nhiệt điện than chiếm khoảng bao nhiêu phần trăm tổng sản lượng điện?",
+          "n": 108,
+          "stem": "Một vật khối lượng 0,2 kg được thả không vận tốc đầu từ đỉnh một mặt dốc nhẵn cao 1,8 m (bỏ qua ma sát, lấy \\(g = 10\\) m/s²). Tốc độ của vật ở chân dốc là:",
           "options": [
-            "Khoảng 31,3%",
-            "Khoảng 43,3%",
-            "Khoảng 61,5%",
-            "Khoảng 26,0%"
+            "6 m/s",
+            "4,2 m/s",
+            "36 m/s",
+            "9 m/s"
           ],
-          "answer": 1,
-          "explanation": "Tỉ trọng = 130 : 300 ≈ 0,433 = 43,3%. Con số 31,3% là tỉ trọng năm 2015 (50 : 160), còn 61,5% là tỉ lệ tăng giữa hai năm đã bị nhầm với tỉ trọng.",
-          "topic": "Địa lí: cơ cấu sản lượng điện",
-          "skill": "Tính tỉ trọng từ bảng số liệu",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "lấy nhầm năm",
-            "nhầm tỉ trọng với tốc độ tăng"
-          ],
-          "n": 112
-        },
-        {
-          "stem": "Tổng sản lượng điện năm 2023 tăng bao nhiêu phần trăm so với năm 2015?",
-          "options": [
-            "46,7%",
-            "187,5%",
-            "87,5%",
-            "53,3%"
-          ],
-          "answer": 2,
-          "explanation": "Tốc độ tăng = (300 − 160)/160 = 0,875 = 87,5%. Phương án 187,5% là tỉ lệ năm 2023 so với 2015 (300/160) chứ không phải mức tăng thêm.",
-          "topic": "Địa lí: cơ cấu sản lượng điện",
-          "skill": "Tính tốc độ tăng trưởng",
-          "difficulty": 2,
-          "level": "Thông hiểu",
-          "mistake_tags": [
-            "nhầm “tăng thêm” với “bằng bao nhiêu lần”"
-          ],
-          "n": 113
-        },
-        {
-          "stem": "Nguồn điện nào có tỉ trọng giảm nhiều nhất (tính theo điểm phần trăm) từ năm 2015 đến năm 2023?",
-          "options": [
-            "Thủy điện",
-            "Nhiệt điện than",
-            "Năng lượng tái tạo và khác",
-            "Điện khí"
-          ],
-          "answer": 3,
-          "explanation": "Tỉ trọng điện khí giảm từ 28,1% xuống 13,3%, tức giảm khoảng 14,8 điểm phần trăm; thủy điện giảm từ 37,5% xuống 28,3% (khoảng 9,2 điểm). Nhiệt điện than và năng lượng tái tạo đều tăng tỉ trọng. Chú ý điện khí có sản lượng giảm nhẹ nhưng tỉ trọng giảm mạnh vì tổng sản lượng tăng nhanh.",
-          "topic": "Địa lí: cơ cấu sản lượng điện",
-          "skill": "So sánh sự thay đổi tỉ trọng",
+          "answer": 0,
+          "explanation": "Cơ năng được bảo toàn nên \\(mgh = \\dfrac{1}{2}mv^2\\), suy ra \\(v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 1{,}8} = 6\\) m/s (khối lượng bị triệt tiêu). Giá trị 4,2 m/s là khi quên hệ số 2; 36 m/s là khi quên lấy căn bậc hai; 9 m/s là khi viết nhầm \\(v^2 = gh/2\\).",
+          "topic": "Vật lí: bảo toàn cơ năng",
+          "skill": "Áp dụng bảo toàn cơ năng cho vật trượt không ma sát",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "so sánh số tuyệt đối thay vì tỉ trọng"
-          ],
-          "n": 114
+            "quên hệ số 2",
+            "quên lấy căn bậc hai"
+          ]
         }
       ]
     },
     {
       "id": "khtn4-05",
       "part": "tdkh",
-      "passage": "Cách mạng Tháng Tám năm 1945 diễn ra trong bối cảnh Nhật Bản tuyên bố đầu hàng Đồng minh vào ngày 15/8/1945. Một số mốc chính: ngày 13/8, Ủy ban khởi nghĩa toàn quốc được thành lập; ngày 14 và 15/8, Hội nghị toàn quốc của Đảng họp ở Tân Trào quyết định phát động Tổng khởi nghĩa; ngày 19/8, khởi nghĩa thắng lợi ở Hà Nội; ngày 23/8 ở Huế; ngày 25/8 ở Sài Gòn; ngày 30/8, vua Bảo Đại thoái vị; ngày 2/9/1945, tại quảng trường Ba Đình (Hà Nội), Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập.",
+      "passage": "Trong tế bào, một phân tử glucozơ bị phân giải hoàn toàn trong điều kiện có oxi (hô hấp hiếu khí) tạo ra khoảng 30 phân tử ATP (số liệu làm tròn để tính toán). Khi thiếu oxi, tế bào cơ chuyển sang lên men lactic, mỗi phân tử glucozơ chỉ tạo ra 2 phân tử ATP.",
       "questions": [
         {
-          "stem": "Trong ba thành phố Hà Nội, Huế và Sài Gòn, thứ tự giành chính quyền từ sớm đến muộn là:",
+          "n": 109,
+          "stem": "Khi 5 phân tử glucozơ bị phân giải hoàn toàn bằng hô hấp hiếu khí thì tạo ra khoảng bao nhiêu phân tử ATP?",
           "options": [
-            "Huế – Hà Nội – Sài Gòn",
-            "Hà Nội – Huế – Sài Gòn",
-            "Sài Gòn – Huế – Hà Nội",
-            "Hà Nội – Sài Gòn – Huế"
+            "10",
+            "150",
+            "35",
+            "300"
           ],
           "answer": 1,
-          "explanation": "Theo đoạn tư liệu, Hà Nội giành chính quyền ngày 19/8, Huế ngày 23/8 và Sài Gòn ngày 25/8. Thứ tự là Hà Nội, Huế rồi Sài Gòn.",
-          "topic": "Lịch sử: Cách mạng tháng Tám 1945",
-          "skill": "Sắp xếp sự kiện theo thời gian",
-          "difficulty": 1,
-          "level": "Nhận biết",
-          "mistake_tags": [
-            "nhầm thứ tự ngày"
-          ],
-          "n": 115
-        },
-        {
-          "stem": "Việc Đảng quyết định phát động Tổng khởi nghĩa ngay sau khi Nhật đầu hàng thể hiện điều gì?",
-          "options": [
-            "Chờ quân Đồng minh vào giải giáp quân Nhật rồi mới hành động",
-            "Chớp thời cơ khi kẻ thù cũ đã suy sụp và kẻ thù mới chưa kịp vào nước ta",
-            "Quyết định vội vàng, chưa có sự chuẩn bị lực lượng",
-            "Dựa hoàn toàn vào sự giúp đỡ của quân Đồng minh"
-          ],
-          "answer": 1,
-          "explanation": "Khi Nhật đầu hàng, bộ máy thống trị của Nhật ở Đông Dương mất chỗ dựa, còn quân Đồng minh chưa vào; Đảng đã chuẩn bị lực lượng từ trước và quyết định khởi nghĩa kịp thời, đúng thời cơ. Cách mạng giành thắng lợi bằng sức mạnh của chính nhân dân ta, không chờ quân Đồng minh.",
-          "topic": "Lịch sử: Cách mạng tháng Tám 1945",
-          "skill": "Hiểu ý nghĩa của thời cơ",
+          "explanation": "Mỗi phân tử glucozơ tạo ra khoảng 30 ATP nên 5 phân tử tạo ra khoảng 5 × 30 = 150 ATP. Giá trị 10 là số ATP khi lên men lactic (5 × 2); 35 là kết quả khi cộng 5 + 30; 300 là khi nhân đôi một lần nữa.",
+          "topic": "Sinh học: hô hấp tế bào",
+          "skill": "Tính số ATP tạo ra từ nhiều phân tử glucozơ",
           "difficulty": 2,
           "level": "Thông hiểu",
           "mistake_tags": [
-            "hiểu sai vai trò của quân Đồng minh"
-          ],
-          "n": 116
+            "dùng sai số ATP của kiểu phân giải",
+            "cộng thay vì nhân"
+          ]
         },
         {
-          "stem": "Việc vua Bảo Đại thoái vị (30/8) và Tuyên ngôn độc lập (2/9) có ý nghĩa chung nào?",
+          "n": 110,
+          "stem": "Để tạo ra cùng một lượng ATP, số phân tử glucozơ cần cho lên men lactic gấp bao nhiêu lần số phân tử glucozơ cần cho hô hấp hiếu khí?",
           "options": [
-            "Chấm dứt sự có mặt của mọi lực lượng nước ngoài trên đất nước",
-            "Mở đầu cuộc kháng chiến chống thực dân Pháp lần thứ hai",
-            "Hoàn thành thống nhất đất nước từ Bắc vào Nam",
-            "Chấm dứt chế độ quân chủ và khai sinh nước Việt Nam Dân chủ Cộng hòa"
+            "28 lần",
+            "30 lần",
+            "60 lần",
+            "15 lần"
           ],
           "answer": 3,
-          "explanation": "Sự kiện 30/8 kết thúc chế độ phong kiến quân chủ ở Việt Nam, và Tuyên ngôn độc lập ngày 2/9/1945 tuyên bố thành lập nước Việt Nam Dân chủ Cộng hòa. Các phương án còn lại sai mốc: kháng chiến toàn quốc chống Pháp bắt đầu năm 1946 và thống nhất đất nước đến năm 1975–1976.",
-          "topic": "Lịch sử: Cách mạng tháng Tám 1945",
-          "skill": "Hiểu mối quan hệ giữa các sự kiện",
+          "explanation": "Gọi lượng ATP cần tạo là A. Hô hấp hiếu khí cần A/30 phân tử glucozơ, lên men lactic cần A/2 phân tử, tỉ số là \\(\\dfrac{A/2}{A/30} = 15\\) lần. Giá trị 28 là hiệu số ATP; 30 là số ATP của hô hấp hiếu khí (không chia cho 2); 60 là tích 2 × 30.",
+          "topic": "Sinh học: hô hấp tế bào",
+          "skill": "So sánh hiệu quả năng lượng của hai con đường phân giải",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "nhầm mốc thời gian giữa các giai đoạn"
-          ],
-          "n": 117
+            "dùng hiệu số thay cho tỉ số",
+            "nhầm tỉ số với số ATP"
+          ]
         }
       ]
     },
     {
       "id": "khtn4-06",
       "part": "tdkh",
-      "passage": "Thị trường một loại nông sản có số liệu về lượng cầu và lượng cung ứng với từng mức giá như sau (đơn vị: nghìn đồng/kg và tấn). Cân bằng thị trường đạt được khi lượng cung bằng lượng cầu.<table class=\"bank-table\"><thead><tr><th>Giá</th><th>10</th><th>12</th><th>14</th><th>16</th><th>18</th></tr></thead><tbody><tr><td>Lượng cầu</td><td>80</td><td>70</td><td>60</td><td>50</td><td>40</td></tr><tr><td>Lượng cung</td><td>30</td><td>45</td><td>60</td><td>75</td><td>90</td></tr></tbody></table>",
       "questions": [
         {
-          "stem": "Giá cân bằng và lượng cân bằng của thị trường này lần lượt là:",
+          "n": 111,
+          "stem": "Một phân tử mARN trưởng thành có đúng 900 nuclêôtit, được dịch mã toàn bộ từ bộ ba mở đầu đến hết bộ ba kết thúc (không có đoạn nào không dịch mã). Biết bộ ba kết thúc không mã hóa axit amin và axit amin mở đầu bị cắt bỏ sau khi dịch mã. Số axit amin của chuỗi polipeptit hoàn chỉnh là:",
           "options": [
-            "16 nghìn đồng/kg và 75 tấn",
-            "12 nghìn đồng/kg và 45 tấn",
-            "18 nghìn đồng/kg và 40 tấn",
-            "14 nghìn đồng/kg và 60 tấn"
-          ],
-          "answer": 3,
-          "explanation": "Ở giá 14, lượng cầu và lượng cung cùng bằng 60 tấn nên đó là điểm cân bằng. Ở các giá khác, lượng cung và lượng cầu không bằng nhau.",
-          "topic": "Kinh tế: cung – cầu và giá cả",
-          "skill": "Xác định điểm cân bằng thị trường",
-          "difficulty": 1,
-          "level": "Nhận biết",
-          "mistake_tags": [
-            "chọn mức giá có lượng cung hoặc cầu lớn nhất"
-          ],
-          "n": 118
-        },
-        {
-          "stem": "Nhà nước quy định giá trần là 12 nghìn đồng/kg. Khi đó thị trường xảy ra tình trạng nào?",
-          "options": [
-            "Thiếu hụt 25 tấn (cầu lớn hơn cung)",
-            "Dư thừa 25 tấn (cung lớn hơn cầu)",
-            "Thiếu hụt 70 tấn",
-            "Cân bằng, không có thay đổi gì"
+            "298",
+            "299",
+            "300",
+            "297"
           ],
           "answer": 0,
-          "explanation": "Ở giá 12, lượng cầu 70 tấn, lượng cung 45 tấn nên cầu lớn hơn cung 25 tấn, gây thiếu hụt. Giá trần thấp hơn giá cân bằng nên khiến người bán bớt cung ứng. Phương án 70 tấn chỉ là lượng cầu chứ chưa phải lượng thiếu hụt.",
-          "topic": "Kinh tế: cung – cầu và giá cả",
-          "skill": "Phân tích tác động của giá trần",
+          "explanation": "mARN có 900/3 = 300 bộ ba. Bỏ bộ ba kết thúc (không mã hóa axit amin) còn 299 bộ ba mã hóa axit amin; sau khi cắt bỏ axit amin mở đầu, chuỗi polipeptit hoàn chỉnh có 299 − 1 = 298 axit amin. Giá trị 300 là số bộ ba; 299 là số axit amin khi chưa cắt axit amin mở đầu; 297 là khi trừ thêm một lần nữa.",
+          "topic": "Sinh học: dịch mã",
+          "skill": "Tính số axit amin của chuỗi polipeptit hoàn chỉnh",
           "difficulty": 3,
           "level": "Vận dụng",
           "mistake_tags": [
-            "nhầm thiếu hụt với dư thừa",
-            "không trừ lượng cung"
+            "không trừ bộ ba kết thúc",
+            "không trừ axit amin mở đầu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-07",
+      "part": "tdkh",
+      "passage": "Bảng sau cho biết diện tích và sản lượng lúa của quốc gia Z (số liệu giả định): <table class=\"bank-table\"><thead><tr><th>Năm</th><th>Diện tích (nghìn ha)</th><th>Năng suất (tạ/ha)</th><th>Sản lượng (nghìn tấn)</th></tr></thead><tbody><tr><td>2010</td><td>4 000</td><td>–</td><td>18 000</td></tr><tr><td>2020</td><td>3 800</td><td>60</td><td>–</td></tr></tbody></table> Năng suất bằng sản lượng chia cho diện tích; 1 tấn = 10 tạ; dấu “–” là số liệu chưa biết.",
+      "questions": [
+        {
+          "n": 112,
+          "stem": "Năng suất lúa của quốc gia Z năm 2010 là:",
+          "options": [
+            "4,5 tạ/ha",
+            "22,2 tạ/ha",
+            "45 tạ/ha",
+            "450 tạ/ha"
           ],
-          "n": 119
+          "answer": 2,
+          "explanation": "Năng suất năm 2010 là 18 000/4 000 = 4,5 tấn/ha = 45 tạ/ha (vì 1 tấn = 10 tạ). Giá trị 4,5 tạ/ha là khi quên đổi đơn vị từ tấn sang tạ; 22,2 tạ/ha là khi chia ngược diện tích cho sản lượng; 450 tạ/ha là khi đổi đơn vị sai bậc lũy thừa của 10.",
+          "topic": "Địa lí: nông nghiệp",
+          "skill": "Tính năng suất từ sản lượng và diện tích",
+          "difficulty": 2,
+          "level": "Thông hiểu",
+          "mistake_tags": [
+            "quên đổi đơn vị tấn sang tạ",
+            "chia ngược tử số và mẫu số"
+          ]
         },
         {
-          "stem": "Giả sử lượng cầu tăng thêm 25 tấn ở mọi mức giá, lượng cung giữ nguyên. Giá và lượng cân bằng mới là:",
+          "n": 113,
+          "stem": "So với năm 2010, sản lượng lúa của quốc gia Z năm 2020 thay đổi như thế nào?",
           "options": [
-            "16 nghìn đồng/kg và 75 tấn",
-            "14 nghìn đồng/kg và 85 tấn",
-            "18 nghìn đồng/kg và 90 tấn",
-            "14 nghìn đồng/kg và 60 tấn"
+            "Tăng khoảng 33,3%",
+            "Tăng khoảng 126,7%",
+            "Giảm khoảng 5,0%",
+            "Tăng khoảng 26,7%"
+          ],
+          "answer": 3,
+          "explanation": "Sản lượng năm 2020 là 3 800 × 60 = 228 000 nghìn tạ = 22 800 nghìn tấn, tăng \\(\\dfrac{22\\,800 - 18\\,000}{18\\,000} \\approx 26{,}7\\%\\). Mức tăng 33,3% chỉ là mức tăng năng suất (45 lên 60 tạ/ha); 126,7% là tỉ số giữa hai năm chứ không phải mức tăng; giảm 5,0% là mức thay đổi của diện tích.",
+          "topic": "Địa lí: nông nghiệp",
+          "skill": "Tính mức thay đổi sản lượng từ diện tích và năng suất",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "chỉ xét một nhân tố là năng suất hoặc diện tích",
+            "nhầm tỉ số với mức tăng"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-08",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 114,
+          "stem": "Một địa phương năm trước đón 2,5 triệu lượt khách với doanh thu du lịch 7 500 tỉ đồng. Năm nay số lượt khách tăng 20% nhưng mức chi tiêu bình quân mỗi lượt khách giảm 10%. Doanh thu du lịch năm nay là:",
+          "options": [
+            "9 000 tỉ đồng",
+            "8 250 tỉ đồng",
+            "8 100 tỉ đồng",
+            "6 750 tỉ đồng"
+          ],
+          "answer": 2,
+          "explanation": "Doanh thu bằng số lượt khách nhân với chi tiêu bình quân mỗi lượt, nên doanh thu năm nay là 7 500 × 1,2 × 0,9 = 8 100 tỉ đồng. Giá trị 9 000 tỉ đồng là khi bỏ qua việc chi tiêu giảm; 8 250 tỉ đồng là khi cộng 20% và trừ 10% rồi coi như tăng 10%; 6 750 tỉ đồng là khi bỏ qua mức tăng số lượt khách.",
+          "topic": "Địa lí: du lịch",
+          "skill": "Tính doanh thu khi hai yếu tố cùng thay đổi",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "cộng trừ phần trăm thay vì nhân hệ số",
+            "bỏ qua một trong hai yếu tố"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-09",
+      "part": "tdkh",
+      "passage": "Sau chiến thắng Rạch Gầm – Xoài Mút đánh tan quân Xiêm xâm lược năm 1785, Nguyễn Huệ tiếp tục lãnh đạo phong trào Tây Sơn. Năm 1788, ông lên ngôi hoàng đế, lấy niên hiệu Quang Trung. Đầu năm 1789, nghĩa quân do Quang Trung chỉ huy đánh bại quân Thanh xâm lược trong trận Ngọc Hồi – Đống Đa.",
+      "questions": [
+        {
+          "n": 115,
+          "stem": "Theo đoạn dẫn, Nguyễn Huệ lên ngôi hoàng đế vào năm nào?",
+          "options": [
+            "1788",
+            "1785",
+            "1789",
+            "1784"
           ],
           "answer": 0,
-          "explanation": "Lượng cầu mới ở các mức giá 10, 12, 14, 16, 18 là 105, 95, 85, 75, 65. So với lượng cung 30, 45, 60, 75, 90 thì hai cột bằng nhau ở giá 16 (cùng 75 tấn). Cầu tăng làm đường cầu dịch sang phải nên giá và lượng cân bằng đều tăng.",
-          "topic": "Kinh tế: cung – cầu và giá cả",
-          "skill": "Dự đoán điểm cân bằng mới khi cầu thay đổi",
-          "difficulty": 4,
-          "level": "Vận dụng cao",
+          "explanation": "Đoạn dẫn nêu rõ năm 1788 Nguyễn Huệ lên ngôi hoàng đế, lấy niên hiệu Quang Trung. Năm 1785 là năm chiến thắng Rạch Gầm – Xoài Mút; năm 1789 là năm chiến thắng Ngọc Hồi – Đống Đa; năm 1784 không phải mốc nào được nêu trong đoạn dẫn.",
+          "topic": "Lịch sử: phong trào Tây Sơn",
+          "skill": "Xác định mốc thời gian từ đoạn dẫn",
+          "difficulty": 1,
+          "level": "Nhận biết",
           "mistake_tags": [
-            "chỉ cộng vào lượng cầu mà không tìm lại điểm bằng nhau"
+            "nhầm với mốc năm của trận đánh"
+          ]
+        },
+        {
+          "n": 116,
+          "stem": "Khoảng thời gian từ chiến thắng Rạch Gầm – Xoài Mút đến chiến thắng Ngọc Hồi – Đống Đa là:",
+          "options": [
+            "1 năm",
+            "4 năm",
+            "3 năm",
+            "6 năm"
           ],
-          "n": 120
+          "answer": 1,
+          "explanation": "Theo đoạn dẫn, chiến thắng Rạch Gầm – Xoài Mút diễn ra năm 1785 và chiến thắng Ngọc Hồi – Đống Đa diễn ra năm 1789, cách nhau 1789 − 1785 = 4 năm. Giá trị 1 năm là khoảng cách từ lúc lên ngôi (1788) đến Ngọc Hồi – Đống Đa; 3 năm là khoảng cách từ 1785 đến 1788; 6 năm là kết quả sai.",
+          "topic": "Lịch sử: phong trào Tây Sơn",
+          "skill": "Tính khoảng thời gian giữa hai sự kiện",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "dùng sai mốc thời gian",
+            "nhầm khoảng cách giữa các sự kiện khác nhau"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-10",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 117,
+          "stem": "Năm 1396, Hồ Quý Ly cho phát hành tiền giấy \"Thông bảo hội sao\". Năm 1400, ông lập ra nhà Hồ; đến năm 1407, nhà Hồ bị quân Minh đánh bại. Nhà Hồ tồn tại khoảng bao nhiêu năm?",
+          "options": [
+            "11 năm",
+            "4 năm",
+            "7 năm",
+            "1 năm"
+          ],
+          "answer": 2,
+          "explanation": "Nhà Hồ được lập năm 1400 và sụp đổ năm 1407, nên tồn tại khoảng 1407 − 1400 = 7 năm. Giá trị 11 năm là khoảng cách từ lúc phát hành tiền giấy (1396) đến 1407, không phải thời gian tồn tại của triều đại; 4 năm là khoảng cách từ 1396 đến 1400; 1 năm là kết quả sai.",
+          "topic": "Lịch sử: cải cách thời Hồ",
+          "skill": "Tính thời gian tồn tại của một triều đại",
+          "difficulty": 2,
+          "level": "Thông hiểu",
+          "mistake_tags": [
+            "dùng sai mốc năm bắt đầu",
+            "nhầm khoảng cách giữa các sự kiện khác nhau"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-11",
+      "part": "tdkh",
+      "passage": "Quốc gia W có 100 triệu dân, trong đó lực lượng lao động (gồm người có việc làm và người thất nghiệp đang tìm việc) là 52 triệu người, số người có việc làm là 50 triệu người. Tỉ lệ thất nghiệp bằng số người thất nghiệp chia cho lực lượng lao động.",
+      "questions": [
+        {
+          "n": 118,
+          "stem": "Tỉ lệ thất nghiệp của quốc gia W xấp xỉ là:",
+          "options": [
+            "4,0%",
+            "2,0%",
+            "96,2%",
+            "3,8%"
+          ],
+          "answer": 3,
+          "explanation": "Số người thất nghiệp là 52 − 50 = 2 triệu người, tỉ lệ thất nghiệp là 2/52 ≈ 3,8%. Giá trị 4,0% là khi chia cho số người có việc làm (2/50); 2,0% là khi chia cho tổng dân số (2/100); 96,2% là tỉ lệ người có việc làm trong lực lượng lao động.",
+          "topic": "Kinh tế: lao động và thất nghiệp",
+          "skill": "Tính tỉ lệ thất nghiệp",
+          "difficulty": 2,
+          "level": "Thông hiểu",
+          "mistake_tags": [
+            "chia cho mẫu số sai",
+            "nhầm tỉ lệ thất nghiệp với tỉ lệ có việc làm"
+          ]
+        },
+        {
+          "n": 119,
+          "stem": "Giả sử thêm 1 triệu người ngoài lực lượng lao động bắt đầu tìm việc nhưng chưa có việc làm. Tỉ lệ thất nghiệp mới xấp xỉ là:",
+          "options": [
+            "5,8%",
+            "5,7%",
+            "1,9%",
+            "3,8%"
+          ],
+          "answer": 1,
+          "explanation": "Những người này được tính vào lực lượng lao động: lực lượng lao động mới là 53 triệu, số người thất nghiệp mới là 3 triệu, nên tỉ lệ là 3/53 ≈ 5,7%. Giá trị 5,8% là khi quên cộng thêm vào lực lượng lao động (3/52); 1,9% là 1/53 (chỉ tính người mới thêm); 3,8% là tỉ lệ cũ.",
+          "topic": "Kinh tế: lao động và thất nghiệp",
+          "skill": "Tính lại tỉ lệ khi lực lượng lao động thay đổi",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "quên cập nhật lực lượng lao động",
+            "chỉ tính nhóm người mới thêm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khtn4-12",
+      "part": "tdkh",
+      "questions": [
+        {
+          "n": 120,
+          "stem": "Một xưởng có chi phí cố định 60 triệu đồng mỗi tháng, chi phí biến đổi 30 000 đồng cho mỗi sản phẩm và bán với giá 50 000 đồng mỗi sản phẩm. Để hòa vốn (doanh thu bằng tổng chi phí), mỗi tháng xưởng cần bán ít nhất:",
+          "options": [
+            "1 200 sản phẩm",
+            "2 000 sản phẩm",
+            "1 500 sản phẩm",
+            "3 000 sản phẩm"
+          ],
+          "answer": 3,
+          "explanation": "Mỗi sản phẩm đóng góp 50 000 − 30 000 = 20 000 đồng để bù chi phí cố định, nên sản lượng hòa vốn là 60 000 000/20 000 = 3 000 sản phẩm. Giá trị 1 200 là khi chia chi phí cố định cho giá bán; 2 000 là khi chia cho chi phí biến đổi; 1 500 là một nửa kết quả đúng.",
+          "topic": "Kinh tế: chi phí và hòa vốn",
+          "skill": "Tính sản lượng hòa vốn",
+          "difficulty": 3,
+          "level": "Vận dụng",
+          "mistake_tags": [
+            "bỏ qua chi phí biến đổi",
+            "chia cho giá bán thay vì phần đóng góp mỗi sản phẩm"
+          ]
         }
       ]
     }

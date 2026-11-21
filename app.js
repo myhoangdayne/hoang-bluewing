@@ -63,6 +63,7 @@ var themeMediaQuery = null;
 
   function setExam(id) {
     if (!EXAMS[id]) id = EXAM_IDS[0];
+    if (curExam !== id) viewAt = null;
     curExam = id;
     EXAM = EXAMS[id];
     QMAP = {};
@@ -483,7 +484,7 @@ function initThemeSettings() {
   }
 
   var lastFocus = null;
-  var MODAL_IDS = ['authModal', 'accountModal', 'goalModal'];
+  var MODAL_IDS = ['authModal', 'accountModal', 'goalModal', 'practiceModal'];
   var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
 
   function openModal(id) {
@@ -583,9 +584,15 @@ function initThemeSettings() {
       case 'auth/popup-closed-by-user': return 'Bạn đã đóng cửa sổ đăng nhập.';
       case 'auth/cancelled-popup-request': return '';
       case 'auth/unauthorized-domain': return 'Tên miền này chưa được thêm vào Firebase (Authentication, Settings, Authorized domains).';
-      case 'auth/operation-not-allowed': return 'Chưa bật đăng nhập Google trong Firebase Authentication.';
+      case 'auth/operation-not-allowed': return 'Phương thức đăng nhập này chưa được bật trong Firebase Authentication.';
       case 'auth/network-request-failed': return 'Mất kết nối mạng. Hãy kiểm tra Internet rồi thử lại.';
       case 'auth/too-many-requests': return 'Thử quá nhiều lần. Vui lòng đợi một lát rồi thử lại.';
+      case 'auth/email-already-in-use': return 'Email hoặc tên đăng nhập này đã có người dùng. Hãy chọn cái khác hoặc đăng nhập.';
+      case 'auth/weak-password': return 'Mật khẩu quá yếu, cần ít nhất 6 ký tự.';
+      case 'auth/invalid-email': return 'Email hoặc tên đăng nhập chưa hợp lệ.';
+      case 'auth/invalid-credential':
+      case 'auth/wrong-password':
+      case 'auth/user-not-found': return 'Sai tên đăng nhập, email hoặc mật khẩu.';
       default: return 'Đăng nhập chưa thành công. Vui lòng thử lại.';
     }
   }
@@ -605,7 +612,7 @@ function initThemeSettings() {
         btn.title = activeUser.displayName || 'Tài khoản';
       } else {
         btn.textContent = activeUser ? 'Tài khoản' : 'Đăng nhập';
-        btn.setAttribute('aria-label', activeUser ? 'Mở tài khoản' : 'Đăng nhập bằng Google');
+        btn.setAttribute('aria-label', activeUser ? 'Mở tài khoản' : 'Đăng nhập');
         btn.removeAttribute('title');
       }
     });
@@ -637,7 +644,7 @@ function initThemeSettings() {
       ? String(customName).trim()
       : (activeUser.displayName || 'Tài khoản BlueWing');
 }
-      if ($('accountEmail')) $('accountEmail').textContent = activeUser.email || '';
+      if ($('accountEmail')) $('accountEmail').textContent = /@users\.bluewing\.invalid$/.test(activeUser.email || '') ? 'Tên đăng nhập: ' + activeUser.email.split('@')[0] : (activeUser.email || '');
       openModal('accountModal');
     } else {
       setAuthStatus('');
@@ -865,6 +872,7 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
       if (authPending) showTestLoading();
       else if (!(state && state.examId === curExam)) enterTest();
     }
+    if (r.name !== 'result') viewAt = null;
     if (r.name === 'result') renderResult();
     lastName = r.name;
     window.scrollTo(0, 0);
@@ -1149,7 +1157,8 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
     var res = { answers: answers, used: used, at: Date.now(), auto: !!auto, correct: graded.correct, parts: graded.parts };
     save(xk(KEY_RESULT, id), res, { localOnly: true });
     var hh = readHistory();
-    hh.push({ exam: id, correct: graded.correct, parts: graded.parts, used: used, at: res.at });
+    hh.push({ exam: id, correct: graded.correct, parts: graded.parts, used: used, at: res.at, a: packAnswers(answers, ex.total) });
+    viewAt = null;
     save(KEY_HISTORY, hh.slice(-HISTORY_LIMIT), { localOnly: true });
     drop(xk(KEY_ATTEMPT, id)); // lần ghi này kích hoạt đồng bộ đám mây cho cả ba thay đổi
     return res;
@@ -1473,9 +1482,235 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
     }).join('');
   }
 
+  /* =====================================================
+     SO SÁNH CÁC LẦN LÀM CÙNG MỘT ĐỀ
+     Mỗi lần nộp bài được ghi vào lịch sử cùng chuỗi đáp án rút gọn (a),
+     nên có thể xem lại chi tiết từng lần, không chỉ lần gần nhất.
+     ===================================================== */
+  var viewAt = null; // thời điểm nộp của lần đang xem; null = lần mới nhất
+
+  function packAnswers(ans, total) {
+    var s = '';
+    for (var n = 1; n <= total; n++) s += ans[n] === undefined ? '-' : String(ans[n]);
+    return s;
+  }
+  function unpackAnswers(s, ex) {
+    var out = {};
+    if (typeof s !== 'string') return out;
+    for (var i = 0; i < s.length && i < ex.total; i++) {
+      var c = s.charAt(i);
+      if (c >= '0' && c <= '3') out[i + 1] = +c;
+    }
+    return out;
+  }
+  function examHistory(id) {
+    return readHistory().filter(function (x) { return String(x.exam || '1') === String(id); })
+      .sort(function (a, b) { return num(a.at) - num(b.at); });
+  }
+  function viewedResult() {
+    var latest = load(xk(KEY_RESULT));
+    if (viewAt === null || !latest || num(latest.at) === viewAt) { viewAt = null; return latest; }
+    var h = examHistory(curExam).filter(function (x) { return num(x.at) === viewAt && typeof x.a === 'string'; })[0];
+    if (!h) { viewAt = null; return latest; }
+    return { answers: unpackAnswers(h.a, EXAM), used: num(h.used), at: num(h.at), correct: num(h.correct), parts: h.parts || {}, fromHistory: true };
+  }
+  var SHORT = { tv: 'T.Việt', ta: 'T.Anh', toan: 'Toán', tdkh: 'TDKH' };
+  function fmtDate(ts) {
+    var d = new Date(num(ts));
+    return pad2(d.getDate()) + '/' + pad2(d.getMonth() + 1);
+  }
+  function fmtDateTime(ts) {
+    var d = new Date(num(ts));
+    return pad2(d.getDate()) + '/' + pad2(d.getMonth() + 1) + ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+
+  function renderCompare(res) {
+    var box = $('cmpBox');
+    if (!box) return;
+    var h = examHistory(curExam);
+    if (!res || h.length < 2) { box.hidden = true; return; }
+    var total = EXAM.total, curAt = num(res.at), latestAt = num(h[h.length - 1].at);
+    var best = -1, bestIdx = 0;
+    h.forEach(function (x, i) { if (num(x.correct) > best) { best = num(x.correct); bestIdx = i; } });
+    var first = num(h[0].correct), last = num(h[h.length - 1].correct), diff = last - first;
+    var curIdx = 0;
+    h.forEach(function (x, i) { if (num(x.at) === curAt) curIdx = i; });
+
+    var sum = 'Bạn đã làm đề này ' + h.length + ' lần. Điểm cao nhất: ' + best + '/' + total + ' câu (lần ' + (bestIdx + 1) + '). ';
+    if (diff > 0) sum += 'So với lần đầu, lần gần nhất của bạn đúng thêm ' + diff + ' câu. Bạn đang tiến bộ rất tốt!';
+    else if (diff === 0) sum += 'Lần gần nhất của bạn bằng lần đầu. Hãy xem lại các câu sai rồi thử lại nhé.';
+    else sum += 'Lần gần nhất thấp hơn lần đầu ' + (-diff) + ' câu, nhưng điều đó rất bình thường. Hãy xem lại các câu sai để lần sau tốt hơn.';
+    if ($('cmpSummary')) $('cmpSummary').textContent = sum;
+
+    var view = $('cmpViewing');
+    if (view) {
+      if (curAt !== latestAt) {
+        view.hidden = false;
+        view.innerHTML = 'Bạn đang xem chi tiết <b>lần ' + (curIdx + 1) + '</b> (' + fmtDateTime(curAt) + '). <button type="button" class="cmp-link" data-view-at="' + latestAt + '">Quay về lần mới nhất</button>';
+      } else { view.hidden = true; view.innerHTML = ''; }
+    }
+
+    var offset = Math.max(0, h.length - 10), noDetail = false;
+    var rows = h.slice(offset).map(function (x, j) {
+      var i = j + offset, at = num(x.at), c = num(x.correct), cell = '';
+      var tg = (i === bestIdx ? '<span class="cmp-badge">Cao nhất</span>' : '') + (at === latestAt ? '<span class="cmp-badge cmp-new">Mới nhất</span>' : '');
+      var tag = tg ? '<span class="cmp-tags">' + tg + '</span>' : '';
+      var d = i === 0 ? '<span class="cmp-flat">—</span>' : (function () {
+        var dd = c - num(h[i - 1].correct);
+        return dd > 0 ? '<span class="cmp-up">+' + dd + '</span>' : dd < 0 ? '<span class="cmp-down">−' + (-dd) + '</span>' : '<span class="cmp-flat">0</span>';
+      })();
+      EXAM.parts.forEach(function (p) {
+        var v = x.parts && x.parts[p.key] !== undefined ? num(x.parts[p.key]) : null;
+        cell += '<td>' + (v === null ? '–' : v + '/' + partSize(p)) + '</td>';
+      });
+      var canView = at === latestAt || typeof x.a === 'string';
+      if (!canView) noDetail = true;
+      var act = at === curAt ? '<span class="cmp-flat">Đang xem</span>' : canView ? '<button type="button" class="cmp-view" data-view-at="' + at + '">Xem lại</button>' : '<span class="cmp-flat" title="Lần này được làm trước khi có tính năng xem lại chi tiết">—</span>';
+      return '<tr' + (at === curAt ? ' class="is-cur"' : '') + '><th scope="row">Lần ' + (i + 1) + tag + '</th><td>' + fmtDate(at) + '</td><td><b>' + c + '/' + total + '</b></td>' + cell + '<td>' + d + '</td><td>' + act + '</td></tr>';
+    }).join('');
+    var head = '<tr><th>Lần làm</th><th>Ngày giờ</th><th>Số câu đúng</th>' + EXAM.parts.map(function (p) { return '<th title="' + p.name + '">' + (SHORT[p.key] || p.name) + '</th>'; }).join('') + '<th>Thay đổi</th><th></th></tr>';
+    if ($('cmpTable')) $('cmpTable').innerHTML = '<table class="cmp-table"><thead>' + head + '</thead><tbody>' + rows + '</tbody></table>';
+    var note = (offset > 0 ? 'Chỉ hiển thị 10 lần gần nhất. ' : '') + (noDetail ? 'Các lần làm trước khi cập nhật chỉ còn điểm tổng, không xem lại chi tiết được.' : '');
+    if ($('cmpNote')) { $('cmpNote').textContent = note; $('cmpNote').hidden = !note; }
+    box.hidden = false;
+  }
+
+  if ($('cmpBox')) {
+    $('cmpBox').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-view-at]');
+      if (!b) return;
+      viewAt = +b.getAttribute('data-view-at');
+      resFilter = 'all';
+      renderResult();
+      var hero = document.querySelector('#screen-result .r3');
+      if (hero && hero.scrollIntoView) hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  /* =====================================================
+     LUYỆN LẠI CÂU CHƯA ĐÚNG
+     Chỉ để ôn tập: không tính vào điểm và không lưu vào lịch sử.
+     ===================================================== */
+  var practice = null;
+
+  function practiceLists(res) {
+    var ans = cleanAnswers(res.answers), wrong = [], blank = [];
+    for (var n = 1; n <= EXAM.total; n++) {
+      var o = QMAP[n];
+      if (!o) continue;
+      if (ans[n] === undefined) blank.push(n);
+      else if (ans[n] !== o.q.answer) wrong.push(n);
+    }
+    return { wrong: wrong, blank: blank };
+  }
+
+  function updatePracticeCta(res) {
+    var box = $('practiceCta');
+    if (!box) return;
+    var L = res && res.answers ? practiceLists(res) : { wrong: [], blank: [] };
+    var answered = res && res.answers ? Object.keys(cleanAnswers(res.answers)).length : 0;
+    var btns = '';
+    if (answered > 0 && L.wrong.length) btns += '<button type="button" class="pr-start" data-pr-start="wrong">Luyện lại ' + L.wrong.length + ' câu sai</button>';
+    if (answered > 0 && L.blank.length) btns += '<button type="button" class="pr-start pr-start-alt" data-pr-start="blank">Làm ' + L.blank.length + ' câu đã bỏ trống</button>';
+    box.hidden = !btns;
+    if ($('practiceBtns')) $('practiceBtns').innerHTML = btns;
+  }
+
+  function practiceStart(list) {
+    if (!list || !list.length) return;
+    practice = { list: list, i: 0, right: 0, again: [], picked: null };
+    var m = $('practiceModal');
+    if (m && m.hidden) openModal('practiceModal');
+    practiceRender();
+  }
+
+  function practiceRender() {
+    var p = practice, body = $('prBody');
+    if (!p || !body) return;
+    var total = p.list.length;
+    if (p.i >= total) { practiceDone(); return; }
+    var n = p.list[p.i], o = QMAP[n];
+    if (!o) { p.i++; practiceRender(); return; }
+    var q = o.q, g = o.g;
+    if ($('prProg')) $('prProg').textContent = 'Câu ' + (p.i + 1) + '/' + total;
+    if ($('prBar')) $('prBar').style.width = Math.round(100 * p.i / total) + '%';
+    var html = '';
+    if (g.passage || g.figures) html += '<div class="x-ctx">' + (g.passage || '') + figHTML(g.figures) + '</div>';
+    html += '<div class="pr-q"><div class="q-text"><span class="qn">Câu ' + n + '.</span> ' + q.stem + '</div>' + figHTML(q.figures) + '<div class="q-opts">';
+    q.options.forEach(function (text, i) {
+      html += '<button type="button" class="opt" data-pi="' + i + '"><span class="opt-letter">' + LETTERS[i] + '</span><span>' + text + '</span></button>';
+    });
+    html += '</div><div class="pr-fb" id="prFb" hidden></div></div>';
+    body.innerHTML = html;
+    typeset(body);
+    body.scrollTop = 0;
+  }
+
+  function practicePick(i) {
+    var p = practice;
+    if (!p || p.picked !== null) return;
+    var n = p.list[p.i], o = QMAP[n];
+    if (!o) return;
+    var q = o.q, ok = i === q.answer;
+    p.picked = i;
+    if (ok) p.right++; else p.again.push(n);
+    $('prBody').querySelectorAll('.opt').forEach(function (b, k) {
+      b.disabled = true;
+      if (k === q.answer) b.classList.add('pr-ok');
+      else if (k === i) b.classList.add('pr-bad');
+    });
+    var last = p.i === p.list.length - 1;
+    var fb = $('prFb');
+    if (!fb) return;
+    fb.innerHTML = '<strong class="' + (ok ? 'pr-good' : 'pr-miss') + '">' + (ok ? 'Chính xác!' : 'Chưa đúng. Đáp án đúng là ' + LETTERS[q.answer] + '.') + '</strong>' +
+      '<div class="pr-exp"><b>Lời giải</b> ' + (q.explanation || 'Chưa có lời giải cho câu này.') + '</div>' +
+      '<button type="button" class="pr-next" data-pr-next>' + (last ? 'Xem kết quả luyện tập' : 'Câu tiếp theo →') + '</button>';
+    fb.hidden = false;
+    typeset(fb);
+    try { fb.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+  }
+
+  function practiceDone() {
+    var p = practice, body = $('prBody');
+    if (!p || !body) return;
+    var total = p.list.length, again = p.again.slice();
+    if ($('prProg')) $('prProg').textContent = 'Hoàn thành';
+    if ($('prBar')) $('prBar').style.width = '100%';
+    var msg = p.right === total
+      ? 'Tuyệt vời! Bạn đã làm đúng tất cả các câu này. Chỗ từng sai giờ đã vững hơn rồi.'
+      : p.right * 2 >= total
+        ? 'Tiến bộ rõ rồi! Vẫn còn một vài câu cần xem lại, bạn đọc kỹ lời giải rồi thử thêm một lượt nữa nhé.'
+        : 'Không sao, những câu này vốn là chỗ khó. Đọc kỹ lời giải rồi luyện thêm một lượt, bạn sẽ nhớ lâu hơn.';
+    body.innerHTML = '<div class="pr-done"><div class="pr-score">' + p.right + '/' + total + '</div><p class="pr-msg">' + msg + '</p>' +
+      (again.length ? '<p class="x-note">Các câu còn sai: ' + again.join(', ') + '.</p>' : '') +
+      '<div class="pr-actions">' +
+      (again.length ? '<button type="button" class="pr-start" data-pr-again>Luyện lại ' + again.length + ' câu còn sai</button>' : '') +
+      '<button type="button" class="pr-start pr-start-alt" data-pr-close>Đóng</button></div></div>';
+    body.scrollTop = 0;
+  }
+
+  if ($('prBody')) {
+    $('prBody').addEventListener('click', function (e) {
+      var opt = e.target.closest('.opt[data-pi]');
+      if (opt) { practicePick(+opt.getAttribute('data-pi')); return; }
+      if (e.target.closest('[data-pr-next]')) { if (practice) { practice.i++; practice.picked = null; practiceRender(); } return; }
+      if (e.target.closest('[data-pr-again]')) { if (practice) practiceStart(practice.again.slice()); return; }
+      if (e.target.closest('[data-pr-close]')) closeModal('practiceModal');
+    });
+  }
+  if ($('practiceCta')) {
+    $('practiceCta').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-pr-start]');
+      if (!b) return;
+      var res = viewedResult();
+      if (!res || !res.answers) return;
+      practiceStart(practiceLists(res)[b.getAttribute('data-pr-start')]);
+    });
+  }
+
   function renderResult() {
     settleExpired(curExam);
-    var res = load(xk(KEY_RESULT));
+    var res = viewedResult();
     if (!res || !res.answers) {
       if ($('resTitle')) $('resTitle').textContent = 'Chưa có bài nộp nào';
       if ($('resMsg')) $('resMsg').textContent = 'Hãy làm đề số ' + (EXAM.num || curExam) + ' rồi nộp bài để xem kết quả tại đây.';
@@ -1486,6 +1721,8 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
       if ($('sidebarScore')) $('sidebarScore').textContent = '0';
       if ($('sidebarDone')) $('sidebarDone').textContent = '0/' + EXAM.total;
       showCachedAI(null);
+      updatePracticeCta(null);
+      renderCompare(null);
       return;
     }
 
@@ -1539,6 +1776,8 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
     renderReview(res);
     showCachedAI(res);
     renderResultSidebar(res);
+    updatePracticeCta(res);
+    renderCompare(res);
   }
 
   function renderReview(res) {
@@ -1609,7 +1848,7 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
     if (!target && resFilter !== 'all') {
       resFilter = 'all';
       renderResTabs();
-      var res = load(xk(KEY_RESULT));
+      var res = viewedResult();
       if (res) renderReview(res);
       target = document.getElementById('review-q-' + n);
     }
@@ -1627,7 +1866,7 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
       if (!b) return;
       resFilter = b.getAttribute('data-f');
       renderResTabs();
-      var res = load(xk(KEY_RESULT));
+      var res = viewedResult();
       if (res) renderReview(res); // chỉ vẽ lại danh sách câu, không vẽ lại cả trang
     });
   }
@@ -1676,6 +1915,92 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
       }
     });
   }
+
+  /* ---------- Đăng nhập bằng email hoặc tên đăng nhập + mật khẩu ---------- */
+  (function () {
+    var form = $('pwForm');
+    if (!form) return;
+    var mode = 'login';
+    var FAKE_DOMAIN = '@users.bluewing.invalid'; // tên đăng nhập được lưu dưới dạng email giả này
+
+    function setMode(m) {
+      mode = m;
+      document.querySelectorAll('[data-auth-mode]').forEach(function (b) {
+        var on = b.getAttribute('data-auth-mode') === m;
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      $('pwSubmit').textContent = m === 'login' ? 'Đăng nhập' : 'Tạo tài khoản';
+      $('pwHint').hidden = m !== 'register';
+      $('pwWarn').hidden = m !== 'register';
+      $('pwForgot').hidden = m !== 'login';
+      $('pwPass').setAttribute('autocomplete', m === 'login' ? 'current-password' : 'new-password');
+      setAuthStatus('');
+    }
+    // Giải thích cụ thể vì sao email hoặc tên đăng nhập chưa hợp lệ
+    function idErrorMessage(raw) {
+      var v = String(raw || '').trim();
+      if (!v) return 'Bạn chưa nhập email hoặc tên đăng nhập.';
+      if (v.indexOf('@') > -1) return 'Email chưa đúng định dạng. Ví dụ: ten@gmail.com.';
+      if (/\s/.test(v)) return 'Tên đăng nhập không được có khoảng trắng. Ví dụ: hoang123 hoặc hoang_123.';
+      if (/[^\x00-\x7F]/.test(v)) return 'Tên đăng nhập không được có dấu hoặc ký tự đặc biệt tiếng Việt. Ví dụ: hoang123 (thay vì Hoàng123).';
+      if (v.length < 3) return 'Tên đăng nhập quá ngắn, cần từ 3 đến 20 ký tự.';
+      if (v.length > 20) return 'Tên đăng nhập quá dài, tối đa 20 ký tự.';
+      return 'Tên đăng nhập chỉ gồm chữ không dấu, số, dấu chấm, gạch dưới (_) và gạch ngang (-).';
+    }
+    function parseId(raw) {
+      var v = String(raw || '').trim().toLowerCase();
+      if (v.indexOf('@') > -1) return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? { email: v, isUser: false, name: v.split('@')[0] } : null;
+      if (!/^[a-z0-9._-]{3,20}$/.test(v)) return null;
+      return { email: v + FAKE_DOMAIN, isUser: true, name: v };
+    }
+
+    document.querySelectorAll('[data-auth-mode]').forEach(function (b) {
+      b.addEventListener('click', function () { setMode(b.getAttribute('data-auth-mode')); });
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (!firebaseAuth) { setAuthStatus('Chủ website cần hoàn tất cấu hình Firebase trước khi bật đăng nhập.'); return; }
+      var id = parseId($('pwId').value), pass = $('pwPass').value;
+      if (!id) { setAuthStatus(idErrorMessage($('pwId').value)); return; }
+      if (pass.length < 6) { setAuthStatus('Mật khẩu cần có ít nhất 6 ký tự.'); return; }
+      var btn = $('pwSubmit');
+      btn.disabled = true;
+      setAuthStatus(mode === 'login' ? 'Đang đăng nhập...' : 'Đang tạo tài khoản...');
+      try {
+        if (mode === 'register') {
+          var cred = await firebaseAuth.createUserWithEmailAndPassword(id.email, pass);
+          try { await cred.user.updateProfile({ displayName: id.name }); updateAuthUI(); } catch (e2) {}
+        } else {
+          await firebaseAuth.signInWithEmailAndPassword(id.email, pass);
+        }
+        closeModal('authModal');
+        setAuthStatus('');
+        form.reset();
+      } catch (err) {
+        console.error('Password sign-in failed:', err);
+        setAuthStatus(authErrorMessage(err));
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    $('pwForgot').addEventListener('click', async function () {
+      var raw = $('pwId').value.trim().toLowerCase();
+      if (raw.indexOf('@') < 0) {
+        setAuthStatus('Tài khoản dùng tên đăng nhập không có email nên không khôi phục được mật khẩu. Nếu bạn đăng ký bằng email, hãy nhập email vào ô trên rồi bấm lại.');
+        return;
+      }
+      if (!firebaseAuth) return;
+      try {
+        await firebaseAuth.sendPasswordResetEmail(raw);
+        setAuthStatus('Nếu email này đã đăng ký, bạn sẽ nhận được thư đặt lại mật khẩu (kiểm tra cả thư rác).');
+      } catch (err) {
+        setAuthStatus(authErrorMessage(err));
+      }
+    });
+  })();
 
   if ($('signOutBtn')) {
     $('signOutBtn').addEventListener('click', async function () {

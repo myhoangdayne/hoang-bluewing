@@ -36,12 +36,18 @@ Hoàng BlueWing
 <h3>Khi bạn dùng ở chế độ khách</h3>
 <p>Kết quả làm bài, lịch sử, bài đang làm dở và thời gian học được lưu ngay trong trình duyệt của bạn (localStorage). Những dữ liệu này không được gửi tới máy chủ của chúng tôi.</p>
 
-<h3>Khi bạn đăng nhập bằng Google</h3>
+<h3>Khi bạn đăng nhập</h3>
+<p>Bạn có thể đăng nhập bằng một trong ba cách: tài khoản Google, email và mật khẩu, hoặc tên đăng nhập và mật khẩu.</p>
 <ul>
-<li>Thông tin hồ sơ Google cơ bản: tên hiển thị, địa chỉ email, ảnh đại diện và mã tài khoản (UID).</li>
+<li>Nếu dùng Google: tên hiển thị, địa chỉ email, ảnh đại diện và mã tài khoản (UID).</li>
+<li>Nếu dùng email: địa chỉ email, mật khẩu và mã tài khoản (UID).</li>
+<li>Nếu dùng tên đăng nhập: tên đăng nhập, mật khẩu và mã tài khoản (UID). Tên đăng nhập được lưu dưới dạng một địa chỉ email nội bộ không có thật, nên website không thể gửi thư hay khôi phục mật khẩu cho loại tài khoản này.</li>
 <li>Dữ liệu học tập của bạn: lịch sử và kết quả các lần làm bài, đáp án đã chọn, bài đang làm dở, mục tiêu điểm số, tên hiển thị tự đặt và số phút học mỗi ngày.</li>
 </ul>
-<p>Website không yêu cầu mật khẩu Google của bạn, không đọc email, danh bạ hay dữ liệu Google khác.</p>
+<p>Mật khẩu của bạn được Firebase Authentication mã hóa và quản lý, chủ website không thể xem được. Khi đăng nhập bằng Google, website không yêu cầu mật khẩu Google của bạn, không đọc email, danh bạ hay dữ liệu Google khác. Bạn không nên dùng lại mật khẩu của các tài khoản quan trọng khác (email, ngân hàng) cho website này.</p>
+
+<h3>Khi bạn gửi góp ý</h3>
+<p>Nút “Gửi góp ý” mở một biểu mẫu Google Forms. Nội dung bạn nhập (góp ý, số đề và số câu, và email hoặc Zalo nếu bạn tự điền) chỉ được chủ website đọc để cải thiện đề thi và liên hệ phản hồi khi bạn muốn. Bạn có thể gửi ẩn danh, không bắt buộc để lại thông tin liên lạc.</p>
 
 <h3>Khi bạn xem phân tích bài làm</h3>
 <p>Phần “Phân tích bài làm” được tạo tự động ngay trên thiết bị của bạn từ đáp án bạn đã chọn và dữ liệu của đề. Nội dung bài làm không được gửi tới dịch vụ AI hay bên thứ ba nào để tạo phân tích này.</p>
@@ -49,19 +55,21 @@ Hoàng BlueWing
 <h2>2. Mục đích sử dụng</h2>
 <ul>
 <li>Chấm điểm, hiển thị kết quả, lịch sử và tiến độ so với mục tiêu.</li>
+<li>Tạo và bảo vệ tài khoản của bạn, gửi thư đặt lại mật khẩu khi bạn dùng email.</li>
 <li>Đồng bộ dữ liệu giữa các thiết bị khi bạn đăng nhập.</li>
 <li>Tạo nhận xét và gợi ý ôn tập từ kết quả bài làm của bạn (xử lý ngay trên thiết bị).</li>
 </ul>
 <p>Chúng tôi không bán dữ liệu của bạn, không hiển thị quảng cáo dựa trên dữ liệu của bạn và không chia sẻ dữ liệu học tập của bạn cho bên thứ ba vì mục đích thương mại.</p>
 
 <h2>3. Nơi lưu trữ và dịch vụ sử dụng</h2>
-<p>Dữ liệu tài khoản được lưu bằng các dịch vụ của Google: Firebase Authentication (đăng nhập), Cloud Firestore (cơ sở dữ liệu). Mỗi tài khoản chỉ đọc và ghi được dữ liệu của chính mình. Font chữ được tải từ Google Fonts và công thức toán từ cdnjs.</p>
+<p>Dữ liệu tài khoản được lưu bằng các dịch vụ của Google: Firebase Authentication (đăng nhập), Cloud Firestore (cơ sở dữ liệu) và Google Forms (nhận góp ý). Mỗi tài khoản chỉ đọc và ghi được dữ liệu của chính mình. Font chữ được tải từ Google Fonts và công thức toán từ cdnjs.</p>
 
 <h2>4. Bạn kiểm soát dữ liệu của mình</h2>
 <ul>
 <li><strong>Xóa dữ liệu học tập:</strong> mở hộp thoại tài khoản (bấm ảnh đại diện) và chọn “Xóa dữ liệu học tập” để xóa toàn bộ lịch sử, kết quả, bài đang làm và mục tiêu.</li>
 <li><strong>Xóa dữ liệu chế độ khách:</strong> xóa dữ liệu trang web trong cài đặt trình duyệt.</li>
 <li><strong>Xóa hẳn tài khoản và hồ sơ:</strong> liên hệ theo địa chỉ ở mục 6, chúng tôi sẽ xóa hồ sơ của bạn.</li>
+<li><strong>Quên mật khẩu:</strong> nếu bạn đăng ký bằng email, hãy bấm “Quên mật khẩu?” ở hộp thoại đăng nhập để nhận thư đặt lại. Tài khoản dùng tên đăng nhập không thể khôi phục mật khẩu.</li>
 <li><strong>Đăng xuất:</strong> bạn có thể đăng xuất bất cứ lúc nào.</li>
 </ul>
 
