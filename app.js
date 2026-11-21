@@ -1972,6 +1972,7 @@ var validNames = ['home', 'dashboard', 'intro', 'test', 'result', 'settings'];
         if (mode === 'register') {
           var cred = await firebaseAuth.createUserWithEmailAndPassword(id.email, pass);
           try { await cred.user.updateProfile({ displayName: id.name }); updateAuthUI(); } catch (e2) {}
+          showToast('Tạo tài khoản thành công! Từ lần sau, bấm mục Đăng nhập rồi nhập tên đăng nhập và mật khẩu vừa tạo để vào lại.');
         } else {
           await firebaseAuth.signInWithEmailAndPassword(id.email, pass);
         }
